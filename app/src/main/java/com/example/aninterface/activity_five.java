@@ -36,10 +36,7 @@ public class activity_five extends AppCompatActivity {
             }
 
         });
-
-
     }
-
     public void Click(View view) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(activity_five.this);
