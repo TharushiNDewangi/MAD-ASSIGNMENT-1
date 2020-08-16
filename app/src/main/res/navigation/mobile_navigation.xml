@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.elearningsystem.home"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.elearningsystem.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.elearningsystem.Login"
+        android:label="@string/adminlogin"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/java"
+        android:name="com.example.elearningsystem.Java"
+        android:label="@string/java"
+        tools:layout="@layout/fragment_java" />
+    <fragment
+        android:id="@+id/csharp"
+        android:name="com.example.elearningsystem.Csharp"
+        android:label="@string/Csharp"
+        tools:layout="@layout/fragment_csharp" />
+    <fragment
+        android:id="@+id/python"
+        android:name="com.example.elearningsystem.python"
+        android:label="@string/python"
+        tools:layout="@layout/fragment_python" />
+    <fragment
+        android:id="@+id/cplus"
+        android:name="com.example.elearningsystem.cplus"
+        android:label="@string/cplus"
+        tools:layout="@layout/fragment_cplus" />
+
+    <fragment
+        android:id="@+id/c"
+        android:name="com.example.elearningsystem.c"
+        android:label="@string/c"
+        tools:layout="@layout/fragment_c" />
+    <fragment
+        android:id="@+id/HTML"
+        android:name="com.example.elearningsystem.HTML"
+        android:label="@string/html"
+        tools:layout="@layout/fragment_h_t_m_l" />
+    <fragment
+        android:id="@+id/vb"
+        android:name="com.example.elearningsystem.vb"
+        android:label="@string/vb"
+        tools:layout="@layout/fragment_vb" />
+
+</navigation>

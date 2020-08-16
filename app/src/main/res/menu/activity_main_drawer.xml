@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/login"
+            android:icon="@drawable/additem"
+            android:title="@string/ADDCourse" />
+
+
+
+        <item
+            android:id="@+id/java"
+            android:icon="@drawable/addmenu2"
+            android:title="@string/java" />
+        <item
+            android:id="@+id/csharp"
+            android:icon="@drawable/addmenu2"
+            android:title="@string/Csharp" />
+        <item
+            android:id="@+id/cplus"
+            android:icon="@drawable/addmenu2"
+            android:title="@string/cplus" />
+        <item
+            android:id="@+id/python"
+            android:icon="@drawable/addmenu2"
+            android:title="@string/python" />
+        <item
+            android:id="@+id/c"
+            android:icon="@drawable/addmenu2"
+            android:title="@string/html" />
+        <item
+            android:id="@+id/HTML"
+            android:icon="@drawable/addmenu2"
+            android:title="@string/c" />
+        <item
+            android:id="@+id/vb"
+            android:icon="@drawable/addmenu2"
+            android:title="@string/vb" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_gallery" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/vedio" />
+
+
+
+
+
+    </group>
+</menu>

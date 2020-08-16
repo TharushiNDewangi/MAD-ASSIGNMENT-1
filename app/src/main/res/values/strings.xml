@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">Edex</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_login">Login</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="Course_Title">Enter Course Title</string>
+    <string name="Course_description">Enter about Course Description</string>
+    <string name="AddCourse">Add</string>
+    <string-array name="courses">
+        <item>Java</item>
+        <item>C#</item>
+        <item>Python</item>
+        <item>VB.net</item>
+        <item>C</item>
+        <item>C++</item>
+        <item>HTML</item>
+    </string-array>
+    <string name="Cancel">CANCEL</string>
+    <string name="ADDimage">ADD IMAGE</string>
+    <string name="addcoursecontent">ADD COURSE CONTENT</string>
+    <string name="java">Java</string>
+    <string name="Csharp">C#</string>
+    <string name="cplus">C++</string>
+    <string name="python">Python</string>
+    <string name="adminlogin">Admin Login</string>
+    <string name="QA">Q/A SESSION</string>
+    <string name="examquize">LATEST NEWS AND QUIZ</string>
+    <string name="userprofile">USER PROFILE</string>
+    <string name="viemqa">VIEW Q/A</string>
+    <string name="developerTeam">DEVELOPER TEAM</string>
+    <string name="submitIdeas">SUBMIT YOUR IDEAS</string>
+    <string name="addyourproblems">ADD YOUR PROBLEMS</string>
+    <string name="advertisement">ADVERTISEMENT</string>
+    <string name="courseDetails">COURSE DETAILS</string>
+    <string name="addcoursev">ADD COURSE ONLY FOR ADMIN</string>
+    <string name="update">UPDATE</string>
+    <string name="delete">DELETE</string>
+    <string name="ADDCourse">ADD COURSE</string>
+    <string name="vedio">Vedio</string>
+    <string name="cancel">CANCEL</string>
+    <string name="vb">VB.net</string>
+    <string name="html">HTML</string>
+    <string name="c">C</string>
+    <string name="selectcat">SELECT COURSE</string>
+    <string name="image">IMAGE</string>
+    <string name="intro">INTRODUCTION</string>
+    <string name="variable">VARIABLE</string>
+    <string name="ifelse">SELECTION STATEMENT</string>
+    <string name="iterration">ITERATION</string>
+    <string name="choise">CHOISE YOUR COURSE</string>
+</resources>
