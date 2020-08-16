@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Interface</string>
+    <string name="Q1">01.what is the main artery that carries away from your heart?</string>
+    <string name="A1">Aorta</string>
+    <string name="Q2">02.alfa-toxins are produced by</string>
+    <string name="A2">Fungi</string>
+    <string name="Q3">03.The maximum fixation of solar energy is done by</string>
+    <string name="A3">Green plants</string>
+    <string name="Q4">04.Outside the nucleus DNA is found in</string>
+    <string name="A4">mitochondria</string>
+
+
+</resources>

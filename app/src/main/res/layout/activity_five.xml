@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:padding="16dp"
+    tools:context=".activity_five">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Mini Quiz"
+        android:textColor="@color/colorPrimary"
+        android:textColorHighlight="@color/common_google_signin_btn_text_dark_focused"
+
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.077" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="319dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:text="Plants receive their nutrients mainly from"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="46dp"
+        android:layout_height="22dp"
+        android:layout_centerVertical="true"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toStartOf="@+id/radio_button2"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.163">
+
+    </RadioGroup>
+
+    <RadioButton
+        android:id="@+id/radio_button2"
+        android:layout_width="124dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:text="chlorophyll"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <RadioButton
+        android:id="@+id/radio_button4"
+        android:layout_width="129dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="28dp"
+        android:text="atmosphere"
+        app:layout_constraintStart_toStartOf="@+id/radio_button2"
+        app:layout_constraintTop_toBottomOf="@+id/radio_button2" />
+
+    <RadioButton
+        android:id="@+id/radio_button1"
+        android:layout_width="129dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="24dp"
+        android:text="light"
+        app:layout_constraintStart_toStartOf="@+id/radio_button4"
+        app:layout_constraintTop_toBottomOf="@+id/radio_button4" />
+
+    <RadioButton
+        android:id="@+id/radio_button3"
+        android:layout_width="129dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="28dp"
+        android:text="soil"
+        app:layout_constraintStart_toStartOf="@+id/radio_button1"
+        app:layout_constraintTop_toBottomOf="@+id/radio_button1" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="134dp"
+        android:layout_height="39dp"
+        android:background="@android:drawable/button_onoff_indicator_off"
+        android:onClick="Click"
+        android:text="Show answer"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio_button3"
+        app:layout_constraintVertical_bias="0.46" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="136dp"
+        android:layout_height="40dp"
+        android:background="@android:drawable/button_onoff_indicator_off"
+        android:text="next"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio_button3"
+        app:layout_constraintVertical_bias="0.6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_one">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="456dp"
+        android:layout_height="767dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.822"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.916"
+        app:srcCompat="@drawable/background" />
+
+    <EditText
+        android:id="@+id/q2"
+        android:layout_width="326dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="144dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Enter question?"
+        android:inputType="textMultiLine"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textColorHint="@color/cardview_light_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/a2"
+        android:layout_width="326dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="48dp"
+        android:ems="10"
+        android:hint="Enter answer"
+        android:inputType="textPersonName"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textColorHint="@color/cardview_light_background"
+        app:layout_constraintEnd_toEndOf="@+id/q2"
+        app:layout_constraintTop_toBottomOf="@+id/q2" />
+
+    <Button
+        android:id="@+id/add2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/b"
+        android:text="ADD"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/a2"
+        app:layout_constraintStart_toStartOf="@+id/a2"
+        app:layout_constraintTop_toBottomOf="@+id/a2"
+        app:layout_constraintVertical_bias="0.028" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="415dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="437dp"
+        android:layout_marginBottom="246dp"
+        android:background="@drawable/b"
+        android:fontFamily="sans-serif-medium"
+        android:text="CANCEL"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/a2"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="@+id/a2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
