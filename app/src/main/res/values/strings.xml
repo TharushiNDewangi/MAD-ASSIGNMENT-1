@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Edex</string>
+    <string name="quection_and_answers">Quection and Answer Session</string>
+    <string name="Project_name">E-Learning</string>
+    <string name="Add_questions">ADD Questions</string>
+    <string name="Edit_Quections">EDIT Questions</string>
+    <string name="DELETE_questions">DELETE Questions</string>
+    <string name="Ask_your_Quection">Ask Your Quection</string>
+    <string name="Your_Quection">Enter Your Quection</string>
+    <string name="Enter_Answer">Enter your answer</string>
+    <string name="ADD">ADD</string>
+    <string name="EDIT_Quections_And_Answers">Edit Your Quection</string>
+    <string name="Edit_Your_Answer">Edit Your Answer</string>
+    <string name="Edit">EDIT</string>
+    <string name="Delete_questions">Delete Quections</string>
+    <string name="Delete_your_question">Delete your quection</string>
+    <string name="Delete_your_answer">Delete your answer</string>
+    <string name="Delete">DELETE</string>
+    <string name="Backto">BACK</string>
+    <string name="View_Q_and_A_Session">VIEW_Q_and_A_Session</string>
+    <string name="Quections_and_Answers">QuectionsAndAnswers</string>
+    <string name="Quection">What is the most trending language to do desktop applications?</string>
+    <string name="Answer">Java</string>
+    <string name="q_a_Session">Q and A Session</string>
+    <string name="advertisement">Add Advertisement</string>
+    <string name="view_advertisement">View Advertisement</string>
+    <string name="makeadvertisement">Advertisement</string>
+    <string name="advertisementform">Advertisement Form</string>
+    <string name="title">Enter Title</string>
+    <string name="Name">Enter Full Name</string>
+    <string name="mobile_number">Enter your mobile number</string>
+    <string name="email">Enter you Email</string>
+    <string name="description">Description</string>
+    <string name="tution_classes">Tution classes</string>
+    <string name="name">A.N.S.Perera</string>
+    <string name="mobile">0716614321</string>
+    <string name="email_address">It19159072@my.sliit.lk</string>
+    <string name="reason_for_advertisement">I am a senior teacher in malabe school.I am doing A/l classes for ICT .If you like to join my class just call me or send a email .</string>
+    <string name="youradvertisement">Your Advertisement</string>
+
+</resources>
