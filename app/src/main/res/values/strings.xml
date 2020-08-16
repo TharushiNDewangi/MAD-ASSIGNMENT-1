@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Edex</string>
+    <string name="welcome_profile_setting_page">User Profile</string>
+    <string name="Would_you_like_to_join_with_us">View User Profile</string>
+    <string name="please_enter_you_name">Enter Your Name*</string>
+    <string name="please_enter_your_id_number">Enter Your NIC*</string>
+    <string name="please_enter_your_subject">Enter Your Course*</string>
+    <string name="please_enter_your_mobile_number">Enter Your Mobile Number*</string>
+    <string name="please_enter_your_email">Enter Your Email</string>
+    <string name="welcome_to_edit_teacher_profile">Edit User Profile</string>
+    <string name="please_click_the_button">Update</string>
+    <string name="would_you_want_to_delete_your_profile">Delete</string>
+    <string name="do_you_like_to_delete_your_profile">Delete User Profile</string>
+    <string name="enter_your_name">R.M.S.M.Perera</string>
+    <string name="enter_your_NIC">895462586V</string>
+    <string name="enter_your_subject">Science</string>
+    <string name="enter_your_mobile_number">0765924348</string>
+    <string name="enter_your_email">madushaniR@gmail.com</string>
+    <string name="click_button">Delete</string>
+    <string name="do_you_want_to_back">Back</string>
+    <string name="as_you_a_new_member">As a New Member</string>
+    <string name="as_a_current_member">Already have an Account?Login</string>
+    <string name="enter_first_name">First Name*</string>
+    <string name="please_enter_last_name">Last Name*</string>
+    <string name="enter_your_birthday">Date of Birth*</string>
+    <string name="click_button_to_register">Get Start</string>
+    <string name="login_to_our_system">Login</string>
+    <string name="enter_chechbox">Remember Me</string>
+    <string name="click_the_button_signin">SING-IN</string>
+    <string name="enter_your_username">User Name</string>
+    <string name="enter_your_password_to_login">Password</string>
+    <string name="add_user_to_system">Add User Profile</string>
+    <string name="create_your_account">Create Your Account</string>
+
+</resources>
