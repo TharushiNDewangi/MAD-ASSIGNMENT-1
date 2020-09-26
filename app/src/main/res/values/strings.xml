@@ -67,4 +67,5 @@
     <string name="ifelse">SELECTION STATEMENT</string>
     <string name="iterration">ITERATION</string>
     <string name="choise">CHOISE YOUR COURSE</string>
+    <string name="bookstore">Book Store</string>
 </resources>
