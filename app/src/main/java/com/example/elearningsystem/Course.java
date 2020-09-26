@@ -42,7 +42,7 @@ public class Course extends AppCompatActivity {
     public Uri imageUrl;
     FirebaseDatabase rootnode;
     DatabaseReference ref;
-    private StorageReference refstorage;
+
    // private DatabaseReference
 
     @Override
@@ -72,7 +72,7 @@ public class Course extends AppCompatActivity {
     public void addcourse() {
         rootnode = FirebaseDatabase.getInstance();
         ref = rootnode.getReference("course");
-        refstorage = FirebaseStorage.getInstance().getReference("course");
+        StorageReference refstorage = FirebaseStorage.getInstance().getReference("course");
 
 //
 //        //get all the values
@@ -85,45 +85,31 @@ public class Course extends AppCompatActivity {
             final ProgressDialog progressDialog = new ProgressDialog(this);
             progressDialog.setTitle("Uploading...");
             progressDialog.show();
-//            StorageReference fileref = refstorage.child( System.currentTimeMillis() + "." + getFileExtension(imageUrl));
-//            fileref.putFile(imageUrl)
-            StorageReference fileref = refstorage.child( "images/*"+ UUID.randomUUID().toString());
-            fileref.putFile(imageUrl)
-                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            StorageReference storageReferance = FirebaseStorage.getInstance().getReference().child("images");
+            final StorageReference fileRefrence = storageReferance.child(imageUrl.getLastPathSegment());
+            fileRefrence.putFile(imageUrl).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    fileRefrence.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        // progressDialog
                         @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                           // Handler handler=new Handler()
-                            progressDialog.dismiss();
-                            Toast.makeText(getApplicationContext(), "upload susseed", Toast.LENGTH_SHORT).show();
-
-
-                            //get all the values
+                        public void onSuccess(Uri uri) {
+                            String img = uri.toString();
                             String title = e1.getText().toString();
                             String des = e2.getText().toString();
                             String course = s.getSelectedItem().toString();
 
-                            AddCourseHelper helper = new  AddCourseHelper(title,des,course,taskSnapshot.toString());
+                            AddCourseHelper helper = new  AddCourseHelper(title,des,course,img);
                             ref.child(title).setValue(helper);
-
+                            progressDialog.dismiss();
                             Toast.makeText(getApplicationContext(), "Successfully added", Toast.LENGTH_SHORT).show();
-//                            img = taskSnapshot.toString();
-                            //helper
+
+
                         }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    })
-                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                    double progress = (100.0*taskSnapshot.getBytesTransferred()/taskSnapshot
-                            .getTotalByteCount());
-                    progressDialog.setMessage("Uploaded "+(int)progress+"%");
+                    });
                 }
             });
+
         }
         else
         {
