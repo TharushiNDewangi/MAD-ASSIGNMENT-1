@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DEAAE6"
+    android:background="@drawable/question"
     tools:context=".Addquestions">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="193dp"
         android:layout_height="29dp"
-        android:background="#8E24AA"
+        android:background="@drawable/shape"
         android:text="@string/Ask_your_Quection"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
@@ -26,53 +26,23 @@
         android:id="@+id/editTextTextPersonName"
         android:layout_width="277dp"
         android:layout_height="63dp"
-        android:background="#C679D5"
+        android:background="@android:color/primary_text_dark"
         android:ems="10"
+        android:hint="@string/Your_Quection"
         android:inputType="textPersonName"
-        android:text="@string/Your_Quection"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintHorizontal_bias="0.559"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.272" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="277dp"
-        android:layout_height="63dp"
-        android:background="#C679D5"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/Enter_Answer"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName3"
-        android:layout_width="277dp"
-        android:layout_height="63dp"
-        android:background="#C679D5"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/Enter_Answer"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561" />
+        app:layout_constraintVertical_bias="0.321" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginEnd="272dp"
-        android:background="#5E35B1"
+        android:background="@drawable/shape"
         android:onClick="click"
         android:text="@string/ADD"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -85,10 +55,23 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginStart="252dp"
-        android:background="#5E35B1"
+        android:background="@drawable/shape"
         android:text="@string/Backto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.803" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:ems="10"
+        android:hint="@string/name_of_user"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

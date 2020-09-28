@@ -37,5 +37,7 @@
     <string name="email_address">It19159072@my.sliit.lk</string>
     <string name="reason_for_advertisement">I am a senior teacher in malabe school.I am doing A/l classes for ICT .If you like to join my class just call me or send a email .</string>
     <string name="youradvertisement">Your Advertisement</string>
+    <string name="name_of_user">Enter name</string>
+    <string name="viewname">View Name</string>
 
 </resources>
