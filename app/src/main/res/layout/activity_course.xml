@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#DDB1E8"
-    tools:context=".Course">
+    tools:context=".AddCourse">
 
     <TextView
         android:id="@+id/coursecontent"

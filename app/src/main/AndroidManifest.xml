@@ -14,11 +14,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".courseDetails"></activity>
+        <activity android:name=".javaadapterview"></activity>
+        <activity android:name=".courseDetails" />
         <activity android:name=".DeleteCourses" />
         <activity android:name=".UpdateCourses" />
         <activity android:name=".viewcourse" />
-        <activity android:name=".Course" />
+        <activity android:name=".AddCourse" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -30,9 +31,5 @@
             </intent-filter>
         </activity>
     </application>
-
-
-
-
 
 </manifest>

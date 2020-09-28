@@ -100,7 +100,7 @@ public class Login extends Fragment {
         else if(uname.equals("admin") || pass.equals("123"))
         {
             Toast.makeText(getActivity(),"success",Toast.LENGTH_LONG).show();
-            Intent intent=new Intent(getActivity().getApplicationContext(),Course.class);
+            Intent intent=new Intent(getActivity().getApplicationContext(), AddCourse.class);
             startActivity(intent);
         }
         else

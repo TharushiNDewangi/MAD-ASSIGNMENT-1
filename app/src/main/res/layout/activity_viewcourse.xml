@@ -22,18 +22,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.042" />
 
-    <ImageView
-        android:id="@+id/imageforcourse"
-        android:layout_width="248dp"
-        android:layout_height="131dp"
-        android:src="@drawable/javaex1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.198" />
-
     <EditText
         android:id="@+id/description"
         android:layout_width="324dp"
@@ -41,7 +29,6 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:text="Encapsulation is one of the four fundamental OOP concepts. The other three are inheritance, polymorphism, and abstraction.  Encapsulation in Java is a mechanism of wrapping the data (variables) and code acting on the data (methods) together as a single unit. In encapsulation, the variables of a class will be hidden from other classes, and can be accessed only through the methods of their current class. Therefore, it is also known as data hiding."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -73,5 +60,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.928" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/coursedescription"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/shape"
+        android:scaleType="centerCrop"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="74dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

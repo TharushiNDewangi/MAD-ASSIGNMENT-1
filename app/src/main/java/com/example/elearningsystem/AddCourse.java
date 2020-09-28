@@ -1,6 +1,5 @@
 package com.example.elearningsystem;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,8 +10,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.renderscript.ScriptGroup;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -21,18 +18,14 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.util.UUID;
-
-public class Course extends AppCompatActivity {
+public class AddCourse extends AppCompatActivity {
 
     static int GALARY = 1;
     EditText e1,e2;
@@ -99,7 +92,7 @@ public class Course extends AppCompatActivity {
                             String des = e2.getText().toString();
                             String course = s.getSelectedItem().toString();
 
-                            AddCourseHelper helper = new  AddCourseHelper(title,des,course,img);
+                            course helper = new course(title,des,course,img);
                             ref.child(title).setValue(helper);
                             progressDialog.dismiss();
                             Toast.makeText(getApplicationContext(), "Successfully added", Toast.LENGTH_SHORT).show();
@@ -138,7 +131,7 @@ public class Course extends AppCompatActivity {
 
     private void alert(String message)
     {
-        AlertDialog dlg = new AlertDialog.Builder(Course.this).setTitle("Message").setMessage(message)
+        AlertDialog dlg = new AlertDialog.Builder(AddCourse.this).setTitle("Message").setMessage(message)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
