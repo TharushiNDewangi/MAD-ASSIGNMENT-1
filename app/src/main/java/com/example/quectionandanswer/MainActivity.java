@@ -1,14 +1,11 @@
 package com.example.quectionandanswer;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Button queSession;
@@ -30,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         advertisement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent adv = new Intent(MainActivity.this,Advertisement.class);
+                Intent adv = new Intent(MainActivity.this, AdvertisementActivity.class);
                 startActivity(adv);
             }
         });

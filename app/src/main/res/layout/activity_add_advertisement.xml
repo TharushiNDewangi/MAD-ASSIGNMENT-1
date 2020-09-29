@@ -24,12 +24,12 @@
         app:layout_constraintVertical_bias="0.051" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/txt_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/title"
         android:inputType="textPersonName"
-        android:text="@string/title"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.452"
@@ -38,12 +38,12 @@
         app:layout_constraintVertical_bias="0.147" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/txt_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/Name"
         android:inputType="textPersonName"
-        android:text="@string/Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.452"
@@ -52,12 +52,12 @@
         app:layout_constraintVertical_bias="0.24" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName7"
+        android:id="@+id/txt_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/email"
         android:inputType="textPersonName"
-        android:text="@string/email"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.457"
@@ -66,12 +66,12 @@
         app:layout_constraintVertical_bias="0.478" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName8"
+        android:id="@+id/txt_mobile"
         android:layout_width="208dp"
         android:layout_height="40dp"
         android:ems="10"
+        android:hint="@string/mobile_number"
         android:inputType="textPersonName"
-        android:text="@string/mobile_number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.452"
@@ -80,21 +80,21 @@
         app:layout_constraintVertical_bias="0.364" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine2"
+        android:id="@+id/txt_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="108dp"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="@string/description"
         android:inputType="textMultiLine"
-        android:text="@string/description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.577" />
 
     <Button
-        android:id="@+id/button14"
+        android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/shape"
@@ -111,24 +111,12 @@
         android:id="@+id/btnChoose"
         android:layout_width="115dp"
         android:layout_height="44dp"
-        android:layout_marginBottom="152dp"
+        android:layout_marginBottom="180dp"
         android:layout_weight="1"
         android:text="Choose"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btnUpload"
-        android:layout_width="119dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="128dp"
-        android:layout_weight="1"
-        android:text="Upload"
-        app:layout_constraintBottom_toTopOf="@+id/button14"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.283"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView

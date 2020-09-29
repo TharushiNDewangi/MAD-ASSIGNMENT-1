@@ -15,31 +15,34 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class QuestionsActivity extends AppCompatActivity {
-    ArrayList<QuestionsInfo> list;
-    QuestionsAdapter questionsAdapter;
+public class AdvertisementActivity2 extends AppCompatActivity {
+    ArrayList<Advertisement> list;
+    AdvertisementAdapter advertisementAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_questions);
+        setContentView(R.layout.activity_advertisement2);
 
         list = new ArrayList<>();
-        final RecyclerView recyclerQuestions = findViewById(R.id.recyclerAdvertisement);
-        questionsAdapter = new QuestionsAdapter(this, list);
+        final RecyclerView recyclerAdvertisement = findViewById(R.id.recyclerAdvertisement);
+        advertisementAdapter = new AdvertisementAdapter(this, list);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerQuestions.setLayoutManager(layoutManager);
-        recyclerQuestions.setAdapter(questionsAdapter);
+        recyclerAdvertisement.setLayoutManager(layoutManager);
+        recyclerAdvertisement.setAdapter(advertisementAdapter);
 
         FirebaseDatabase db = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference=db.getReference("Q&A");
+        DatabaseReference databaseReference = db.getReference("Advertisement");
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
-                    QuestionsInfo questionsInfo = dataSnapshot1.getValue(QuestionsInfo.class);
-                    list.add(questionsInfo);
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+
+                    Advertisement advertisement = dataSnapshot1.getValue(Advertisement.class);
+                    list.add(advertisement);
                 }
-                questionsAdapter.notifyDataSetChanged();
+                advertisementAdapter.notifyDataSetChanged();
             }
 
             @Override

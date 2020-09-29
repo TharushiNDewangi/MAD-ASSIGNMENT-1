@@ -1,7 +1,6 @@
 package com.example.quectionandanswer;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
@@ -28,7 +27,7 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.View
 
         ViewHolder(View view) {
             super(view);
-            txt_name = view.findViewById(R.id.txt_name);
+            txt_name = view.findViewById(R.id.txt_mobile);
             txt_question = view.findViewById(R.id.txt_question);
         }
     }

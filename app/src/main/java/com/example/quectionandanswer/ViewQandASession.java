@@ -26,7 +26,7 @@ public class ViewQandASession extends AppCompatActivity {
         String name = getIntent().getStringExtra("name");
         String question = getIntent().getStringExtra("question");
 
-        TextView txt_name = findViewById(R.id.txt_name);
+        TextView txt_name = findViewById(R.id.txt_mobile);
         TextView txt_question = findViewById(R.id.txt_question);
         txt_answer1 = findViewById(R.id.txt_answer1);
         txt_answer2 = findViewById(R.id.txt_answer2);

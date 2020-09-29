@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/adv_image"
-    tools:context=".Advertisement">
+    tools:context=".AdvertisementActivity">
 
     <Button
         android:id="@+id/button12"
