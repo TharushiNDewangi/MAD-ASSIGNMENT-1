@@ -1,5 +1,6 @@
 package com.example.elearningsystem;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -13,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -94,6 +96,7 @@ public class Java extends Fragment {
         reference=database.getReference("course");
 
        recycleropt = view.findViewById(R.id.jadpter);
+        Context context;
 
 
 
@@ -107,8 +110,28 @@ public class Java extends Fragment {
             FirebaseRecyclerOptions<course> options = new FirebaseRecyclerOptions.Builder<course>().setQuery(qury,course.class).build();
             adapter=new FirebaseRecyclerAdapter<course, Jadpter>(options) {
                 @Override
-                protected void onBindViewHolder(@NonNull Jadpter holder, int position, @NonNull course model) {
+                protected void onBindViewHolder(@NonNull Jadpter holder, int position, @NonNull final course model) {
                     holder.t1.setText(model.getTitle());
+                    holder.b1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            //Toast.makeText(getActivity(),"@@1123",Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(getContext(),viewcourse.class);
+                            intent.putExtra("title",model.getTitle());
+                            getContext().startActivity(intent);
+                        }
+                    });
+//                    holder.c1.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            Toast.makeText(getActivity(),"@@",Toast.LENGTH_LONG).show();
+//                            Intent intent = new Intent(getContext(),viewcourse.class);
+//                            intent.putExtra("title",model.getTitle());
+//                            getContext().startActivity(intent);
+//                        }
+//                    });
+
+
 
                 }
 

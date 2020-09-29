@@ -81,7 +81,7 @@ public class home extends Fragment {
 //                FragmentTransaction transaction = getFragmentManager().beginTransaction();
 //                transaction.replace(R.id.drawer_layout, viewcouse);
 //                transaction.commit();
-                startActivity(new Intent(getActivity(),viewcourse.class));
+                //startActivity(new Intent(getActivity(),viewcourse.class));
 
             }
         });

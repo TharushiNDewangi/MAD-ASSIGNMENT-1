@@ -1,5 +1,6 @@
 package com.example.elearningsystem;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -96,8 +97,17 @@ public class c extends Fragment {
         FirebaseRecyclerOptions<course> options = new FirebaseRecyclerOptions.Builder<course>().setQuery(qury,course.class).build();
         adapter=new FirebaseRecyclerAdapter<course, Jadpter>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull Jadpter holder, int position, @NonNull course model) {
+            protected void onBindViewHolder(@NonNull Jadpter holder, int position, @NonNull final course model) {
                 holder.t1.setText(model.getTitle());
+                holder.b1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //Toast.makeText(getActivity(),"@@1123",Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(getContext(),viewcourse.class);
+                        intent.putExtra("title",model.getTitle());
+                        getContext().startActivity(intent);
+                    }
+                });
 
             }
 

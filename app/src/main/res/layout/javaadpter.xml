@@ -5,14 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="35dp"
     android:layout_margin="5dp"
-
+    android:clickable="true"
     >
 
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#933AA3"
+        android:clickable="true"
+        android:gravity="right"
         android:text="TextView"
-        android:gravity="center"
-        />
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/b1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#490855"
+        android:gravity="right"
+        android:textColor="#FFFFFF" />
 </androidx.cardview.widget.CardView>

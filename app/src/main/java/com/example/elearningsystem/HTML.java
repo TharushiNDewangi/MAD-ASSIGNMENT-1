@@ -1,12 +1,25 @@
 package com.example.elearningsystem;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +36,12 @@ public class HTML extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    RecyclerView recycleropt;
+    FirebaseRecyclerAdapter<course,Jadpter> adapter;
+    FirebaseDatabase database;
+    DatabaseReference reference;
+    Button b1;
 
     public HTML() {
         // Required empty public constructor
@@ -55,10 +74,60 @@ public class HTML extends Fragment {
         }
     }
 
+    ArrayList<AddCourseHelper> list;
+    Jadpter jadapter;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             Bundle savedInstanceState)
+    {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_h_t_m_l, container, false);
+        View view = inflater.inflate(R.layout.fragment_java, container, false);
+
+        database = FirebaseDatabase.getInstance();
+        reference=database.getReference("course");
+
+        recycleropt = view.findViewById(R.id.jadpter);
+
+
+
+        dbhandler();
+
+        return view;
     }
+    private void dbhandler()
+    {
+        Query qury = reference.orderByChild("coursename").equalTo("HTML");
+        FirebaseRecyclerOptions<course> options = new FirebaseRecyclerOptions.Builder<course>().setQuery(qury,course.class).build();
+        adapter=new FirebaseRecyclerAdapter<course, Jadpter>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull Jadpter holder, int position, @NonNull final course model) {
+                holder.t1.setText(model.getTitle());
+                holder.b1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //Toast.makeText(getActivity(),"@@1123",Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(getContext(),viewcourse.class);
+                        intent.putExtra("title",model.getTitle());
+                        getContext().startActivity(intent);
+                    }
+                });
+
+            }
+
+            @NonNull
+            @Override
+            public Jadpter onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.javaadpter,parent,false);
+                return new Jadpter(view);
+            }
+
+        };
+        recycleropt.setHasFixedSize(true);
+        recycleropt.setLayoutManager(new GridLayoutManager(getContext(),1));
+        adapter.startListening();
+        adapter.notifyDataSetChanged();
+        recycleropt.setAdapter(adapter);
+    }
+
 }
