@@ -16,6 +16,11 @@ public class course {
         this.mimagurl = mimagurl;
     }
 
+    public course(String title, String des) {
+        this.title = title;
+        this.des = des;
+    }
+
     public String getTitle() {
         return title;
     }

@@ -8,10 +8,12 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -24,7 +26,7 @@ import com.squareup.picasso.Picasso;
 public class viewcourse extends AppCompatActivity {
 
     Button b1,b2;
-    EditText e1,e2;
+    TextView e1,e2;
     ImageView i1;
 
     String title;
@@ -76,9 +78,6 @@ public class viewcourse extends AppCompatActivity {
                    e1.setText(title);
                    e2.setText(des);
 
-
-
-
             }
 
             @Override
@@ -89,12 +88,15 @@ public class viewcourse extends AppCompatActivity {
     }
 
     public void updatecourse() {
-        //Toast.makeText(getApplicationContext(), "Successfully updated", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Successfully updated", Toast.LENGTH_SHORT).show();
 
-        //call second activity
-        Intent intent = new Intent(this, UpdateCourses.class);
-        //
+        Intent intent = new Intent(viewcourse.this,UpdateCourses.class);
+        String title = e1.getText().toString();
+        String des = e2.getText().toString();
 
+        intent.putExtra("title", title);
+        intent.putExtra("des", des);
+        intent.putExtra("img",R.id.imageView);
         startActivity(intent);
 
     }

@@ -20,6 +20,11 @@ public class AddCourseHelper {
         this.des = des;
     }
 
+    public AddCourseHelper(String title, String des) {
+        this.title = title;
+        this.des = des;
+    }
+
     public AddCourseHelper() {
     }
 
