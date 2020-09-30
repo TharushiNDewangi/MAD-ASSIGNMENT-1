@@ -2,18 +2,25 @@ package com.example.quectionandanswer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class ViewAdvertisement extends AppCompatActivity {
+
     DatabaseReference databaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_advertisement);
+
+
+
 
         String title= getIntent().getStringExtra("title");
         String name = getIntent().getStringExtra("name");
@@ -26,6 +33,8 @@ public class ViewAdvertisement extends AppCompatActivity {
         TextView txt_mobile = findViewById(R.id.txt_mobile);
         TextView txt_email = findViewById(R.id.txt_email);
         TextView txt_description = findViewById(R.id.txt_description);
+
+        //oya text view tika hariyata name karala na xml file eke.
 
         txt_title.setText(title);
         txt_name.setText(name);

@@ -20,7 +20,7 @@ public class Deletequestions extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent backTo = new Intent(Deletequestions.this,SecondActivity.class);
+                Intent backTo = new Intent(Deletequestions.this,ViewQandASession.class);
                 startActivity(backTo);
             }
         });

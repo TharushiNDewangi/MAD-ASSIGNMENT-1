@@ -21,7 +21,7 @@ public class Editquestions extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent backTo = new Intent(Editquestions.this,SecondActivity.class);
+                Intent backTo = new Intent(Editquestions.this,ViewQandASession.class);
                 startActivity(backTo);
             }
         });

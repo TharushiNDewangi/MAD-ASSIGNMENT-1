@@ -11,8 +11,6 @@ import android.widget.Toast;
 
 public class SecondActivity extends AppCompatActivity {
     Button add;
-    Button edit;
-    Button delete;
     Button view;
     Button back;
     Context context;
@@ -24,8 +22,7 @@ public class SecondActivity extends AppCompatActivity {
 context = this;
         try {
             add = findViewById(R.id.button2);
-            edit = findViewById(R.id.button3);
-            delete = findViewById(R.id.button4);
+
             view = findViewById(R.id.button9);
             back = findViewById(R.id.button15);
 
@@ -44,20 +41,7 @@ context = this;
                     startActivity(addQue);
                 }
             });
-            edit.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent editQue = new Intent(context, Editquestions.class);
-                    startActivity(editQue);
-                }
-            });
-            delete.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent deleteQue = new Intent(context, Deletequestions.class);
-                    startActivity(deleteQue);
-                }
-            });
+
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
