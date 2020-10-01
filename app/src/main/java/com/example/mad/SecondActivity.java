@@ -1,33 +1,56 @@
 package com.example.mad;
-
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class SecondActivity extends AppCompatActivity {
+    ArrayList<ProfileHelper>list;
+    ProfileAdapter profileAdapter;
 
-    Button back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        back = findViewById(R.id.btn8);
+        list = new ArrayList<> ();
+        final RecyclerView recyclerProfile = findViewById(R.id.recyclerProfile);
+        profileAdapter = new ProfileAdapter(this,list);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerProfile.setLayoutManager(layoutManager);
+        recyclerProfile.setAdapter(profileAdapter);
 
-        back.setOnClickListener(new View.OnClickListener() {
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = db.getReference("profile");
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View view) {
-                Intent backTo = new Intent(SecondActivity.this,FifthActivity.class);
-                startActivity(backTo);
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
+
+                    ProfileHelper profileHelper = dataSnapshot1.getValue(ProfileHelper.class);
+                    list.add(profileHelper);
+                }
+                profileAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
 
     }
+
 }
