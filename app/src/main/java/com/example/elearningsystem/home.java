@@ -18,7 +18,7 @@ import android.widget.Button;
  * create an instance of this fragment.
  */
 public class home extends Fragment {
-    Button buttonview,b1;
+    Button buttonview,b1,markcalculater;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -63,29 +63,19 @@ public class home extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_home, container, false);
+
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        //Button login = (Button)view.findViewById(R.id.login);
-//        b1=view.findViewById(R.id.admin);
-//        b1.setOnClickListener(startActivity(new Intent(getActivity(),login);
+        markcalculater = (Button) view.findViewById(R.id.mark);
 
-
-
-        buttonview = (Button) view.findViewById(R.id.corsedetails);
-        buttonview.setOnClickListener(new View.OnClickListener() {
+        markcalculater.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Viewcoursedetails viewcouse = new Viewcoursedetails();
-//                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-//                transaction.replace(R.id.drawer_layout, viewcouse);
-//                transaction.commit();
-                //startActivity(new Intent(getActivity(),viewcourse.class));
+                startActivity(new Intent(getActivity(),markscalculation.class));
 
             }
         });
-return view;
+        return view;
 
     }
 }

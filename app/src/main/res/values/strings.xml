@@ -68,4 +68,12 @@
     <string name="iterration">ITERATION</string>
     <string name="choise">CHOISE YOUR COURSE</string>
     <string name="bookstore">Book Store</string>
+    <string name="mark">Enter your total mark :</string>
+    <string name="outmark">Enter your out of mark :</string>
+    <string name="cal">Calculate</string>
+    <string name="cl">Clear</string>
+    <string name="names">Enter your name</string>
+    <string name="modules">Enter Your name</string>
+    <string name="outofmark">Enter your Outof Mark</string>
+    <string name="moduless">Enter Number of modules</string>
 </resources>

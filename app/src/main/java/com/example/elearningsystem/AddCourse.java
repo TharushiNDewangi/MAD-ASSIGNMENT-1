@@ -77,6 +77,7 @@ public class AddCourse extends AppCompatActivity {
         if (i1 != null) {
             final ProgressDialog progressDialog = new ProgressDialog(this);
             progressDialog.setTitle("Uploading...");
+
             progressDialog.show();
             StorageReference storageReferance = FirebaseStorage.getInstance().getReference().child("images");
             final StorageReference fileRefrence = storageReferance.child(imageUrl.getLastPathSegment());
@@ -119,13 +120,6 @@ public class AddCourse extends AppCompatActivity {
         //
 
         //startActivity(intent);
-
-    }
-
-    private String getFileExtension(Uri uri) {
-        ContentResolver CR = getContentResolver();
-        MimeTypeMap mime = MimeTypeMap.getSingleton();
-        return mime.getExtensionFromMimeType(CR.getType(uri));
 
     }
 

@@ -75,7 +75,7 @@ public class cplus extends Fragment {
         }
     }
 
-    ArrayList<AddCourseHelper> list;
+    ArrayList<course> list;
     Jadpter jadapter;
 
     @Override

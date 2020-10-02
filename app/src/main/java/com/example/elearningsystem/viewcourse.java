@@ -92,11 +92,11 @@ public class viewcourse extends AppCompatActivity {
 
         Intent intent = new Intent(viewcourse.this,UpdateCourses.class);
         String title = e1.getText().toString();
-        String des = e2.getText().toString();
-
-        intent.putExtra("title", title);
-        intent.putExtra("des", des);
-        intent.putExtra("img",R.id.imageView);
+//        String des = e2.getText().toString();
+//
+         intent.putExtra("title", title);
+//        intent.putExtra("des", des);
+//        intent.putExtra("img",R.id.imageView);
         startActivity(intent);
 
     }

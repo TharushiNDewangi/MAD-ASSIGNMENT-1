@@ -82,7 +82,7 @@ public class Java extends Fragment {
 
         }
     }
-    ArrayList<AddCourseHelper> list;
+    ArrayList<course> list;
     Jadpter jadapter;
 
     @Override
@@ -95,7 +95,7 @@ public class Java extends Fragment {
         database = FirebaseDatabase.getInstance();
         reference=database.getReference("course");
 
-       recycleropt = view.findViewById(R.id.jadpter);
+        recycleropt = view.findViewById(R.id.jadpter);
         Context context;
 
 
@@ -103,24 +103,24 @@ public class Java extends Fragment {
         dbhandler();
 
         return view;
-        }
-        private void dbhandler()
-        {
-            Query qury = reference.orderByChild("coursename").equalTo("Java");
-            FirebaseRecyclerOptions<course> options = new FirebaseRecyclerOptions.Builder<course>().setQuery(qury,course.class).build();
-            adapter=new FirebaseRecyclerAdapter<course, Jadpter>(options) {
-                @Override
-                protected void onBindViewHolder(@NonNull Jadpter holder, int position, @NonNull final course model) {
-                    holder.t1.setText(model.getTitle());
-                    holder.b1.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            //Toast.makeText(getActivity(),"@@1123",Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(getContext(),viewcourse.class);
-                            intent.putExtra("title",model.getTitle());
-                            getContext().startActivity(intent);
-                        }
-                    });
+    }
+    private void dbhandler()
+    {
+        Query qury = reference.orderByChild("coursename").equalTo("Java");
+        FirebaseRecyclerOptions<course> options = new FirebaseRecyclerOptions.Builder<course>().setQuery(qury,course.class).build();
+        adapter=new FirebaseRecyclerAdapter<course, Jadpter>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull Jadpter holder, int position, @NonNull final course model) {
+                holder.t1.setText(model.getTitle());
+                holder.b1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //Toast.makeText(getActivity(),"@@1123",Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(getContext(),viewcourse.class);
+                        intent.putExtra("title",model.getTitle());
+                        getContext().startActivity(intent);
+                    }
+                });
 //                    holder.c1.setOnClickListener(new View.OnClickListener() {
 //                        @Override
 //                        public void onClick(View v) {
@@ -133,24 +133,24 @@ public class Java extends Fragment {
 
 
 
-                }
+            }
 
-                @NonNull
-                @Override
-                public Jadpter onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.javaadpter,parent,false);
-                    return new Jadpter(view);
-                }
+            @NonNull
+            @Override
+            public Jadpter onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.javaadpter,parent,false);
+                return new Jadpter(view);
+            }
 
-            };
-           recycleropt.setHasFixedSize(true);
-           recycleropt.setLayoutManager(new GridLayoutManager(getContext(),1));
-           adapter.startListening();
-           adapter.notifyDataSetChanged();
-           recycleropt.setAdapter(adapter);
-        }
-
+        };
+        recycleropt.setHasFixedSize(true);
+        recycleropt.setLayoutManager(new GridLayoutManager(getContext(),1));
+        adapter.startListening();
+        adapter.notifyDataSetChanged();
+        recycleropt.setAdapter(adapter);
     }
+
+}
 //
 //        //Button login = (Button)view.findViewById(R.id.login);
 //        b1 = (Button) view.findViewById(R.id.up3);
@@ -166,5 +166,4 @@ public class Java extends Fragment {
 //            }
 //        });
 //        return view;
-   // }
-
+// }

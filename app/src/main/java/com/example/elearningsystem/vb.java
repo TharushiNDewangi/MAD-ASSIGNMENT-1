@@ -74,7 +74,7 @@ public class vb extends Fragment {
         }
     }
 
-    ArrayList<AddCourseHelper> list;
+    ArrayList<course> list;
     Jadpter jadapter;
 
     @Override

@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".javaadapterview"></activity>
+        <activity android:name=".markscalculation"></activity>
+        <activity android:name=".javaadapterview" />
         <activity android:name=".courseDetails" />
         <activity android:name=".DeleteCourses" />
         <activity android:name=".UpdateCourses" />

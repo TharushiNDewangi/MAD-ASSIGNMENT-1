@@ -9,12 +9,22 @@ public class course {
     public course() {
     }
 
+
+
+    public course(String title, String des, String mimagurl) {
+        this.title = title;
+        this.des = des;
+        this.mimagurl = mimagurl;
+    }
+
     public course(String title, String des, String coursename, String mimagurl) {
         this.title = title;
         this.des = des;
         this.coursename = coursename;
         this.mimagurl = mimagurl;
     }
+
+
 
     public course(String title, String des) {
         this.title = title;

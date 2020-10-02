@@ -72,7 +72,7 @@ public class c extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-    ArrayList<AddCourseHelper> list;
+    ArrayList<course> list;
     Jadpter jadapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
