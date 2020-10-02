@@ -34,7 +34,6 @@ public class ViewAdvertisement extends AppCompatActivity {
         TextView txt_email = findViewById(R.id.txt_email);
         TextView txt_description = findViewById(R.id.txt_description);
 
-        //oya text view tika hariyata name karala na xml file eke.
 
         txt_title.setText(title);
         txt_name.setText(name);

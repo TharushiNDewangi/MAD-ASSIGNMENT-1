@@ -21,8 +21,8 @@
 
             <ImageView
                 android:id="@+id/img_advertisement"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="233dp"
+                android:layout_height="57dp"
                 card_view:layout_constraintBottom_toBottomOf="parent"
                 card_view:layout_constraintStart_toStartOf="parent"
                 card_view:layout_constraintTop_toTopOf="parent"

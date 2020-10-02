@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DEAAE6"
+    android:background="@drawable/qanda"
     tools:context=".SecondActivity">
 
     <Button
@@ -14,6 +14,7 @@
         android:layout_marginTop="20dp"
 
         android:background="@drawable/shape"
+        android:backgroundTint="#4B1BAE"
         android:text="@string/quection_and_answers"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
@@ -28,6 +29,7 @@
         android:layout_height="60dp"
         android:layout_marginTop="152dp"
         android:background="@drawable/shape"
+        android:backgroundTint="#230561"
         android:text="@string/Add_questions"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,6 +43,7 @@
         android:layout_height="60dp"
         android:layout_marginBottom="280dp"
         android:background="@drawable/shape"
+        android:backgroundTint="#230561"
         android:text="@string/View_Q_and_A_Session"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -53,7 +56,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="#4F14C6"
         android:text="Back"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

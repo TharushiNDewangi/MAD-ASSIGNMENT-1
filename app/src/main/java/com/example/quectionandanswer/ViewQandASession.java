@@ -20,6 +20,7 @@ public class ViewQandASession extends AppCompatActivity {
     DatabaseReference databaseReference;
     EditText txt_answer1,txt_answer2;
     Button btnUpdate,btnDelete;
+    String name,question,answer1,answer2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,11 +28,17 @@ public class ViewQandASession extends AppCompatActivity {
         btnUpdate=findViewById(R.id.btnUpdate);
         btnDelete=findViewById(R.id.btnDelete);
 
+        name = getIntent().getStringExtra("name");
+        question = getIntent().getStringExtra("question");
+
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                Intent updQue =new Intent(ViewQandASession.this,Editquestions.class);
+                updQue.putExtra("name",name);
+                updQue.putExtra("question",question);
                startActivity(updQue);
+
             }
         });
         btnDelete.setOnClickListener(new View.OnClickListener() {
@@ -42,8 +49,6 @@ public class ViewQandASession extends AppCompatActivity {
             }
         });
 
-        String name = getIntent().getStringExtra("name");
-        String question = getIntent().getStringExtra("question");
 
         TextView txt_name = findViewById(R.id.txt_mobile);
         TextView txt_question = findViewById(R.id.txt_question);

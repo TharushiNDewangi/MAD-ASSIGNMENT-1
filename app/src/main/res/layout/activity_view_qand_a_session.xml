@@ -4,112 +4,127 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DEAAE6"
+    android:background="@drawable/qanda"
     tools:context=".ViewQandASession">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#5E35B1"
+        android:background="@drawable/shape"
+        android:backgroundTint="#420EAA"
         android:text="@string/quection_and_answers"
+        android:textColor="?android:attr/colorBackground"
         android:textSize="24sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.077" />
+        app:layout_constraintVertical_bias="0.021" />
 
     <TextView
         android:id="@+id/txt_question"
-        android:layout_width="393dp"
-        android:layout_height="76dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="276dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="56dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="@color/common_google_signin_btn_text_dark_default"
         android:text="@string/Quection"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.573" />
+        app:layout_constraintVertical_bias="0.253" />
 
     <EditText
         android:id="@+id/txt_answer1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
+        android:layout_width="206dp"
+        android:layout_height="47dp"
+
+        android:layout_marginStart="176dp"
+        android:background="@color/common_google_signin_btn_text_dark_pressed"
+        android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.674" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="312dp"
-        android:layout_height="223dp"
-        android:layout_marginEnd="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.188"
-        app:srcCompat="@drawable/que_image" />
+        app:layout_constraintVertical_bias="0.394" />
 
     <Button
         android:id="@+id/btn_add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="292dp"
-        android:layout_marginBottom="76dp"
+        android:layout_width="86dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="192dp"
+        android:layout_marginBottom="188dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="#5216CC"
         android:text="ADD Answers"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txt_answer1"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="@+id/txt_answer2" />
 
     <EditText
         android:id="@+id/txt_answer2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="148dp"
+        android:layout_width="204dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="328dp"
+        android:background="@color/common_google_signin_btn_text_dark_default"
+        android:backgroundTint="#FFFFFF"
         android:ems="10"
+
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.796"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txt_mobile"
         android:layout_width="168dp"
         android:layout_height="37dp"
-        android:layout_marginBottom="88dp"
+        android:layout_marginBottom="112dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="@color/common_google_signin_btn_text_dark_default"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/txt_question"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintHorizontal_bias="0.177"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="76dp"
+        android:layout_marginBottom="108dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="#4E1DB1"
         android:text="UPDATE"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintHorizontal_bias="0.585"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="320dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="#491DA1"
         android:text="DELETE"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/txt_answer2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

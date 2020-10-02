@@ -6,6 +6,14 @@ public class Answer {
 
     public Answer(){}
 
+    public void setAnswer1(String answer1) {
+        this.answer1 = answer1;
+    }
+
+    public void setAnswer2(String answer2) {
+        this.answer2 = answer2;
+    }
+
     public Answer(String answer1, String answer2){
         this.answer1 = answer1;
         this.answer2 = answer2;

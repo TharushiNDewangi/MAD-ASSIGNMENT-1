@@ -27,7 +27,7 @@ public class Addquestions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addquestions);
         back = findViewById(R.id.button6);
-        etQuestion=findViewById(R.id.editTextTextPersonName);
+        etQuestion=findViewById(R.id.txt_question);
         etName=findViewById(R.id.editTextTextPersonName10);
         add=findViewById(R.id.button5);
 
@@ -39,7 +39,7 @@ public class Addquestions extends AppCompatActivity {
                 String name=etName.getText().toString();
                 String  question =etQuestion.getText().toString();
 
-                Question questionClass = new Question(name,question);
+                QuestionsInfo questionClass = new QuestionsInfo(name,question);
                 reference.child(name).setValue(questionClass);
 
 

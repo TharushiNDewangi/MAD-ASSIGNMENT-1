@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="0.052" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/txt_question"
         android:layout_width="277dp"
         android:layout_height="63dp"
         android:background="@android:color/primary_text_dark"

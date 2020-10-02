@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="0.052" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/txt_question"
         android:layout_width="277dp"
         android:layout_height="63dp"
         android:background="#C679D5"
@@ -38,7 +38,7 @@
         app:layout_constraintVertical_bias="0.272" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/txt_answer1"
         android:layout_width="277dp"
         android:layout_height="63dp"
         android:background="#C679D5"
@@ -53,7 +53,7 @@
         app:layout_constraintVertical_bias="0.413" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/txt_answer2"
         android:layout_width="277dp"
         android:layout_height="63dp"
         android:background="#C679D5"
