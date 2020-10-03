@@ -12,25 +12,36 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class FourthActivity extends AppCompatActivity {
 
-    Button back;
-    private View view;
+    Button cart,goBookstore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fourth);
-        back = findViewById(R.id.btn8);
 
-        back.setOnClickListener(new View.OnClickListener() {
+        cart = findViewById(R.id.button8);
+
+        cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent backTo = new Intent(FourthActivity.this,FifthActivity.class);
-                startActivity(backTo);
+                Intent goCart = new Intent(FourthActivity.this,NinthActivity.class);
+                startActivity(goCart);
             }
         });
+
+        goBookstore = findViewById(R.id.button7);
+
+        goBookstore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent addBook = new Intent(FourthActivity.this, AddBook.class);
+                startActivity(addBook);
+            }
+        });
+
     }
 
-    public void Click (View view) {
+    /*public void Click (View view) {
         AlertDialog.Builder builder= new AlertDialog.Builder(FourthActivity.this);
         builder.setTitle("Alert");
         builder.setMessage("Do You Want to Delete Profile?");
@@ -55,5 +66,5 @@ public class FourthActivity extends AppCompatActivity {
         });
         AlertDialog dialog = builder.create();
         dialog.show();
-    }
+    }*/
 }

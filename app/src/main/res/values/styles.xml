@@ -7,4 +7,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Widget.MaterialComponents.TextInputLayout">layout_style</style>
+
+    <style name="Widget">lay</style>
+
+    <style name="Widget.MaterialComponents">out</style>
+
 </resources>

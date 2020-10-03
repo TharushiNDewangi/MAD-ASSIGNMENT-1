@@ -42,7 +42,7 @@ public class SecondActivity extends AppCompatActivity {
                     ProfileHelper profileHelper = dataSnapshot1.getValue(ProfileHelper.class);
                     list.add(profileHelper);
                 }
-                profileAdapter.notifyDataSetChanged();
+               profileAdapter.notifyDataSetChanged();
             }
 
             @Override

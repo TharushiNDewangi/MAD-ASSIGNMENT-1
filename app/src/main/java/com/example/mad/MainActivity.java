@@ -1,6 +1,5 @@
 package com.example.mad;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,37 +8,32 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-
-    Button login;
-    Button newMem;
-
+    Button goProfile, BookStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        login = findViewById(R.id.btn13);
+        goProfile = findViewById(R.id.button);
 
-        login.setOnClickListener(new View.OnClickListener() {
+        goProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent editDetail = new Intent(MainActivity.this,SixthActivity.class);
-                startActivity(editDetail);
+                Intent intent = new Intent(MainActivity.this,FifthActivity.class);
+                startActivity(intent);
             }
         });
 
-        newMem= findViewById(R.id.btn12);
+        BookStore = findViewById(R.id.button5);
 
-        newMem.setOnClickListener(new View.OnClickListener() {
+        BookStore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent AsMem = new Intent(MainActivity.this,SevenActivity.class);
-                startActivity(AsMem);
+                Intent goCart = new Intent(MainActivity.this,FourthActivity.class);
+                startActivity(goCart);
             }
         });
-
-
 
     }
 }

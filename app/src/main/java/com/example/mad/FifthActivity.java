@@ -12,53 +12,35 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class FifthActivity extends AppCompatActivity {
-
-    Button goDelete;
-    Button edit;
-    Button back;
-    Button add;
+    Button goAdd;
+    Button view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fifth);
 
-        goDelete= findViewById(R.id.btn1);
-        edit = findViewById(R.id.btn2);
-        goDelete.setOnClickListener(new View.OnClickListener() {
+        view = findViewById(R.id.btn2);
+
+        view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent addDetail = new Intent(FifthActivity.this,FourthActivity.class);
-                startActivity(addDetail);
+                Intent viewDetail = new Intent(FifthActivity.this,SecondActivity.class);
+                startActivity(viewDetail);
             }
         });
 
-        edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent editDetail = new Intent(FifthActivity.this,ThirdActivity.class);
-                startActivity(editDetail);
-            }
-        });
+        goAdd = findViewById(R.id.button2);
 
-        back = findViewById(R.id.button3);
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent BackToLogin = new Intent(FifthActivity.this,MainActivity.class);
-                startActivity(BackToLogin);
-            }
-        });
-
-        add = findViewById(R.id.button2);
-
-        add.setOnClickListener(new View.OnClickListener() {
+        goAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent ToAdd = new Intent(FifthActivity.this,EighthActivity.class);
                 startActivity(ToAdd);
             }
         });
+
+
+
     }
 }

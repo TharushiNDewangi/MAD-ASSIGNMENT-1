@@ -4,86 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/image2"
-    android:src="@drawable/image2"
+    android:background="@drawable/img2"
+    android:src="@drawable/img2"
     tools:context=".FifthActivity">
 
 
     <Button
-        android:id="@+id/btn1"
-        android:layout_width="283dp"
-        android:layout_height="56dp"
-        android:background="#C679D5"
-        android:text="Delete User Profile"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.57"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537" />
-
-    <Button
         android:id="@+id/btn2"
-        android:layout_width="285dp"
+        android:layout_width="200dp"
         android:layout_height="56dp"
-        android:background="#C679D5"
-        android:text="Change User Profile"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.563"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="285dp"
-        android:layout_height="52dp"
-        android:background="#C679D5"
-        android:text="Logout"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.563"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.658" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="289dp"
-        android:layout_height="59dp"
-        android:background="#C679D5"
-        android:text="@string/add_user_to_system"
-        android:textSize="18sp"
+        android:background="@drawable/shape"
+        android:text="@string/view_user_profile"
+        android:textColorHighlight="#FAF6F6"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.549"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.294" />
+        app:layout_constraintVertical_bias="0.588" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="200dp"
+        android:layout_height="56dp"
+        android:background="@drawable/shape"
+        android:text="@string/add_user_to_system"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.345" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="403dp"
-        android:layout_height="54dp"
+        android:layout_width="200dp"
+        android:layout_height="56dp"
         android:text="@string/welcome_profile_setting_page"
         android:textAlignment="center"
-        android:textColor="#0C0C0C"
-        android:textColorHighlight="#0B0A0A"
+        android:textColor="#FAF6F6"
+        android:textColorHighlight="#F8F3F3"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.004" />
+        app:layout_constraintVertical_bias="0.108" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
