@@ -1,12 +1,15 @@
 package com.example.elearningsystem;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,12 +19,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
@@ -38,6 +45,9 @@ public class UpdateCourses extends AppCompatActivity {
     DatabaseReference dbreference;
     String title,des,img;
     String d;
+    public Uri imageUrl;
+    FirebaseDatabase rootnode;
+
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,17 +55,11 @@ public class UpdateCourses extends AppCompatActivity {
         setContentView(R.layout.activity_update_courses);
         dbreference=FirebaseDatabase.getInstance().getReference().child("course");
 
-
-
         t1 = findViewById(R.id.viewtitle);
         e2 = findViewById(R.id.description);
         b1 = findViewById(R.id.cancel);
         i1 = findViewById(R.id.imageView);
 
-        //title=getIntent().getStringExtra("title");
-
-
-//
         titl = getIntent().getExtras().getString("title");
 
         i1.setOnClickListener(new View.OnClickListener() {
@@ -71,23 +75,16 @@ public class UpdateCourses extends AppCompatActivity {
             }
         });
 
-
-       // titl=getIntent().getStringExtra("title");
-
         b4=findViewById(R.id.up3);
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Alert(view);
-                //update();
+
             }
         });
-        //viewvalues();
 
         getdbvalues(titl);
-
-        String d1 = e2.getText().toString();
-        //update(d1);
 
     }
 
@@ -99,13 +96,14 @@ public class UpdateCourses extends AppCompatActivity {
     }
     public void Alert(View view){
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        setTitle("Confirmation");
+        setTitle("Do you wat to update?");
         alert.setMessage(" You wanted to update ?");
         alert.setPositiveButton("YES",
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
-                        uo();
+                        update();
+
                     }
                 });
 
@@ -150,23 +148,66 @@ public class UpdateCourses extends AppCompatActivity {
         startActivityForResult(intent,GALARY);
         //onActivityResult();
     }
-    public void update( String descr)
-    {
 
-        dbreference = FirebaseDatabase.getInstance().getReference("course").child(title).child("des");
-        dbreference.setValue(descr);
-    }
-    public void uo()
+    public void update()
     {
         d = e2.getText().toString();
         FirebaseDatabase database=FirebaseDatabase.getInstance();
         DatabaseReference reference = database.getReference().child("course").child(titl);
         Map<String, Object> name = new HashMap();
         name.put("des", d);
+
         reference.updateChildren(name);
 
         Toast.makeText(UpdateCourses.this,d,Toast.LENGTH_LONG).show();
 
+    }
+    public void updateimg() {
+        rootnode = FirebaseDatabase.getInstance();
+        dbreference = rootnode.getReference("course");
+        StorageReference refstorage = FirebaseStorage.getInstance().getReference("course");
+
+        if (i1 != null) {
+            final ProgressDialog progressDialog = new ProgressDialog(this);
+            progressDialog.setTitle("Uploading...");
+
+            progressDialog.show();
+            StorageReference storageReferance = FirebaseStorage.getInstance().getReference().child("images");
+            final StorageReference fileRefrence = storageReferance.child(imageUrl.getLastPathSegment());
+            fileRefrence.putFile(imageUrl).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    fileRefrence.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        // progressDialog
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            String img = uri.toString();
+                            Map<String, Object> imgdb = new HashMap();
+                            imgdb.put("mimagurl", img);;
+
+                            dbreference.child("course").child(titl);
+                            dbreference.updateChildren(imgdb);
+                            progressDialog.dismiss();
+                            Toast.makeText(getApplicationContext(), "Successfully added", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            });
+        }
+        else
+        {
+            Toast.makeText(getApplicationContext(), "no file selected", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == GALARY && resultCode == RESULT_OK && data != null && data != null) {
+            imageUrl = data.getData();
+            i1.setImageURI(imageUrl);
+            //picasso.with(this).load(imageUrl).into(i1);
+        }
     }
 
 //    private void editData(String strTitle, final String strBody, String image){

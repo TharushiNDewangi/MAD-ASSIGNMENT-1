@@ -36,8 +36,6 @@ public class AddCourse extends AppCompatActivity {
     FirebaseDatabase rootnode;
     DatabaseReference ref;
 
-   // private DatabaseReference
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,13 +65,6 @@ public class AddCourse extends AppCompatActivity {
         ref = rootnode.getReference("course");
         StorageReference refstorage = FirebaseStorage.getInstance().getReference("course");
 
-//
-//        //get all the values
-//        String title = e1.getText().toString();
-//        String des = e2.getText().toString();
-//        String course = s.getSelectedItem().toString();
-
-        //final String img ;
         if (i1 != null) {
             final ProgressDialog progressDialog = new ProgressDialog(this);
             progressDialog.setTitle("Uploading...");
@@ -97,29 +88,15 @@ public class AddCourse extends AppCompatActivity {
                             ref.child(title).setValue(helper);
                             progressDialog.dismiss();
                             Toast.makeText(getApplicationContext(), "Successfully added", Toast.LENGTH_SHORT).show();
-
-
                         }
                     });
                 }
             });
-
         }
         else
         {
             Toast.makeText(getApplicationContext(), "no file selected", Toast.LENGTH_SHORT).show();
         }
-        //String img = i1.getDownloaed.toString();
-//        AddCourseHelper helper = new  AddCourseHelper(title,des,course);
-//        ref.child(title).setValue(helper);
-//
-//        Toast.makeText(getApplicationContext(), "Successfully added", Toast.LENGTH_SHORT).show();
-
-        //call second activity
-        //Intent intent = new Intent(this,viewcourse.class);
-        //
-
-        //startActivity(intent);
 
     }
 
@@ -150,6 +127,17 @@ public class AddCourse extends AppCompatActivity {
             //picasso.with(this).load(imageUrl).into(i1);
         }
 
-
     }
+    //String img = i1.getDownloaed.toString();
+//        AddCourseHelper helper = new  AddCourseHelper(title,des,course);
+//        ref.child(title).setValue(helper);
+//
+//        Toast.makeText(getApplicationContext(), "Successfully added", Toast.LENGTH_SHORT).show();
+
+    //call second activity
+    //Intent intent = new Intent(this,viewcourse.class);
+    //
+
+    //startActivity(intent);
+
 }

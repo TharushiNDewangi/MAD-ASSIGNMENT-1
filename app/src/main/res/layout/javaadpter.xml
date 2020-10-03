@@ -21,9 +21,10 @@
 
     <Button
         android:id="@+id/b1"
-        android:layout_width="wrap_content"
+        android:layout_width="171dp"
         android:layout_height="wrap_content"
-        android:background="#490855"
+        android:background="#933AA3"
         android:gravity="right"
-        android:textColor="#FFFFFF" />
+        android:text="I"
+        android:textColor="#933AA3" />
 </androidx.cardview.widget.CardView>
