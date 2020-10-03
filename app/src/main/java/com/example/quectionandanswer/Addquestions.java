@@ -26,7 +26,7 @@ public class Addquestions extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addquestions);
-        back = findViewById(R.id.button6);
+
         etQuestion=findViewById(R.id.txt_question);
         etName=findViewById(R.id.editTextTextPersonName10);
         add=findViewById(R.id.button5);
@@ -50,43 +50,37 @@ public class Addquestions extends AppCompatActivity {
 
 
 
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent backTo = new Intent(Addquestions.this,SecondActivity.class);
-                startActivity(backTo);
-            }
-        });
+
 
     }
 
 
-    public void click(View view) {
-        AlertDialog.Builder builder =new AlertDialog.Builder(Addquestions.this);
-        builder.setTitle("Alert");
-        builder.setMessage("Do you want to add Questions?");
-        builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(Addquestions.this,"Yes,Click",Toast.LENGTH_SHORT).show();
-
-            }
-        });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(
-                        Addquestions.this,"No,Click",Toast.LENGTH_SHORT).show();
-            }
-        });
-        builder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(Addquestions.this,"Cancel",Toast.LENGTH_SHORT).show();
-                dialogInterface.cancel();
-            }
-        });
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
+//    public void click(View view) {
+//        AlertDialog.Builder builder =new AlertDialog.Builder(Addquestions.this);
+//        builder.setTitle("Alert");
+//        builder.setMessage("Do you want to add Questions?");
+//        builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int i) {
+//                Toast.makeText(Addquestions.this,"Yes,Click",Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
+//        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int i) {
+//                Toast.makeText(
+//                        Addquestions.this,"No,Click",Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        builder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int i) {
+//                Toast.makeText(Addquestions.this,"Cancel",Toast.LENGTH_SHORT).show();
+//                dialogInterface.cancel();
+//            }
+//        });
+//        AlertDialog dialog = builder.create();
+//        dialog.show();
+//    }
 }

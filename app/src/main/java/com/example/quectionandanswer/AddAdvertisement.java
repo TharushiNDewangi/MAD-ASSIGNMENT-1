@@ -12,6 +12,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -146,29 +147,46 @@ public class AddAdvertisement extends AppCompatActivity {
 
 
     private void addAdvertisement(String imgUrl) {
-        Advertisement advertisement = new Advertisement();
-        advertisement.setTitle(txt_title.getText().toString());
-        advertisement.setName(txt_name.getText().toString());
-        advertisement.setMobile(txt_mobile.getText().toString());
-        advertisement.setEmail(txt_email.getText().toString());
-        advertisement.setDescription(txt_description.getText().toString());
-        advertisement.setImageUrl(imgUrl);
-        FirebaseDatabase db = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference = db.getReference("Advertisement");
 
-        String mobile=txt_mobile.getText().toString();
+                Advertisement advertisement = new Advertisement();
+                advertisement.setTitle(txt_title.getText().toString());
+                advertisement.setName(txt_name.getText().toString());
+                advertisement.setMobile(txt_mobile.getText().toString());
+                advertisement.setEmail(txt_email.getText().toString());
+                advertisement.setDescription(txt_description.getText().toString());
+                advertisement.setImageUrl(imgUrl);
+                FirebaseDatabase db = FirebaseDatabase.getInstance();
+                DatabaseReference databaseReference = db.getReference("Advertisement");
 
-        databaseReference.child(mobile).setValue(advertisement).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                Toast.makeText(AddAdvertisement.this, "Added Successfully", Toast.LENGTH_SHORT).show();
+                String mobile = txt_mobile.getText().toString();
+        try {
+            if (TextUtils.isEmpty(txt_title.getText().toString()))
+                Toast.makeText(getApplicationContext(), "Please enter title", Toast.LENGTH_SHORT).show();
+            else if (TextUtils.isEmpty(txt_name.getText().toString()))
+                Toast.makeText(getApplicationContext(), "Please enter name", Toast.LENGTH_SHORT).show();
+            else if (TextUtils.isEmpty(txt_mobile.getText().toString()))
+                Toast.makeText(getApplicationContext(), "please enter mobile", Toast.LENGTH_SHORT).show();
+            else if (TextUtils.isEmpty(txt_email.getText().toString()))
+                Toast.makeText(getApplicationContext(), "please enter email", Toast.LENGTH_SHORT).show();
+            else if (TextUtils.isEmpty(txt_description.getText().toString()))
+                Toast.makeText(getApplicationContext(), "please enter description", Toast.LENGTH_SHORT).show();
+            else {
+                databaseReference.child(mobile).setValue(advertisement).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(AddAdvertisement.this, "Added Successfully", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        e.printStackTrace();
+                    }
+                });
             }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                e.printStackTrace();
-            }
-        });
+        }catch(NumberFormatException e){
+            e.printStackTrace();
+
+        }
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -186,33 +204,33 @@ public class AddAdvertisement extends AppCompatActivity {
     }
 
 
-    public void click(View view) {
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(AddAdvertisement.this);
-        builder.setTitle("Alert");
-        builder.setMessage("Do You Want to Edit your questions?");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(AddAdvertisement.this, "Yes click", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(AddAdvertisement.this, "No Click", Toast.LENGTH_SHORT).show();
-            }
-        });
-        builder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(AddAdvertisement.this, "cancel", Toast.LENGTH_SHORT).show();
-                dialogInterface.cancel();
-            }
-        });
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
+//    public void click(View view) {
+//
+//        AlertDialog.Builder builder = new AlertDialog.Builder(AddAdvertisement.this);
+//        builder.setTitle("Alert");
+//        builder.setMessage("Do You Want to Edit your questions?");
+//        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int i) {
+//                Toast.makeText(AddAdvertisement.this, "Yes click", Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
+//        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int i) {
+//                Toast.makeText(AddAdvertisement.this, "No Click", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        builder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int i) {
+//                Toast.makeText(AddAdvertisement.this, "cancel", Toast.LENGTH_SHORT).show();
+//                dialogInterface.cancel();
+//            }
+//        });
+//
+//        AlertDialog dialog = builder.create();
+//        dialog.show();
+//    }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/question"
+    android:background="@drawable/qanda"
     tools:context=".Addquestions">
 
     <TextView
@@ -12,6 +12,7 @@
         android:layout_width="193dp"
         android:layout_height="29dp"
         android:background="@drawable/shape"
+        android:backgroundTint="#5E35B1"
         android:text="@string/Ask_your_Quection"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
@@ -26,7 +27,8 @@
         android:id="@+id/txt_question"
         android:layout_width="277dp"
         android:layout_height="63dp"
-        android:background="@android:color/primary_text_dark"
+        android:background="@drawable/shape"
+        android:backgroundTint="#D1CDDA"
         android:ems="10"
         android:hint="@string/Your_Quection"
         android:inputType="textPersonName"
@@ -41,32 +43,24 @@
         android:id="@+id/button5"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="272dp"
         android:background="@drawable/shape"
+        android:backgroundTint="#5E35B1"
         android:onClick="click"
         android:text="@string/ADD"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.802" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="252dp"
-        android:background="@drawable/shape"
-        android:text="@string/Backto"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.565"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.803" />
+        app:layout_constraintVertical_bias="0.762" />
 
     <EditText
         android:id="@+id/editTextTextPersonName10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="218dp"
+        android:layout_height="46dp"
         android:layout_marginTop="96dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="#E5E2EA"
         android:ems="10"
         android:hint="@string/name_of_user"
         android:inputType="textPersonName"
