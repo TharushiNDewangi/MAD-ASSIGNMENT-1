@@ -21,8 +21,8 @@
 
     <Button
         android:id="@+id/b1"
-        android:layout_width="171dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
         android:background="#933AA3"
         android:gravity="right"
         android:text="I"

@@ -10,6 +10,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -64,39 +65,55 @@ public class AddCourse extends AppCompatActivity {
         rootnode = FirebaseDatabase.getInstance();
         ref = rootnode.getReference("course");
         StorageReference refstorage = FirebaseStorage.getInstance().getReference("course");
+        try {
+            if (TextUtils.isEmpty(e1.getText().toString()))//chek krnawa field ek emptyda kila
+                Toast.makeText(getApplicationContext(), "Empty title", Toast.LENGTH_LONG).show();
+            else if (TextUtils.isEmpty(e2.getText().toString()))
+                Toast.makeText(getApplicationContext(), "Empty name", Toast.LENGTH_LONG).show();
+            else if (TextUtils.isEmpty(s.getSelectedItem().toString()))
+                Toast.makeText(getApplicationContext(), "Empty course", Toast.LENGTH_LONG).show();
 
-        if (i1 != null) {
-            final ProgressDialog progressDialog = new ProgressDialog(this);
-            progressDialog.setTitle("Uploading...");
+            else {
+                if (i1 != null) {
+                    final ProgressDialog progressDialog = new ProgressDialog(this);
+                    progressDialog.setTitle("Uploading...");
 
-            progressDialog.show();
-            StorageReference storageReferance = FirebaseStorage.getInstance().getReference().child("images");
-            final StorageReference fileRefrence = storageReferance.child(imageUrl.getLastPathSegment());
-            fileRefrence.putFile(imageUrl).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    fileRefrence.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                        // progressDialog
+                    progressDialog.show();
+                    StorageReference storageReferance = FirebaseStorage.getInstance().getReference().child("images");
+                    final StorageReference fileRefrence = storageReferance.child(imageUrl.getLastPathSegment());
+                    fileRefrence.putFile(imageUrl).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
-                        public void onSuccess(Uri uri) {
-                            String img = uri.toString();
-                            String title = e1.getText().toString();
-                            String des = e2.getText().toString();
-                            String course = s.getSelectedItem().toString();
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            fileRefrence.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                // progressDialog
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    String img = uri.toString();
+                                    String title = e1.getText().toString();
+                                    String des = e2.getText().toString();
+                                    String course = s.getSelectedItem().toString();
 
-                            course helper = new course(title,des,course,img);
-                            ref.child(title).setValue(helper);
-                            progressDialog.dismiss();
-                            Toast.makeText(getApplicationContext(), "Successfully added", Toast.LENGTH_SHORT).show();
+                                    course helper = new course(title,des,course,img);
+                                    ref.child(title).setValue(helper);
+                                    progressDialog.dismiss();
+                                    Toast.makeText(getApplicationContext(), "Successfully added", Toast.LENGTH_SHORT).show();
+                                }
+                            });
                         }
                     });
                 }
-            });
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "no file selected", Toast.LENGTH_SHORT).show();
+                }
+
+            }
         }
-        else
+        catch (Exception e)
         {
-            Toast.makeText(getApplicationContext(), "no file selected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"invalide",Toast.LENGTH_LONG).show();
         }
+
 
     }
 
