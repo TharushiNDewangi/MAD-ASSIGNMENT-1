@@ -43,12 +43,13 @@ public class markscalculation extends AppCompatActivity {
                 name =e3.getText().toString();
                 numofmod =e4.getText().toString();
 
-                int castedmark=Integer.parseInt(mark);
-                int castedoutofmark=Integer.parseInt(outoumark);
-                int numofmodule = Integer.parseInt(numofmod);
+                float castedmark=Integer.parseInt(mark);
+                float castedoutofmark=Integer.parseInt(outoumark);
+                float numofmodule = Integer.parseInt(numofmod);
 
-                int result = (castedoutofmark / castedmark) * 100;
-                int avgres = castedmark / numofmodule;
+
+                float result =  calcResult(castedoutofmark,castedmark);
+                float avgres = calcAvgmark(castedmark,numofmodule);
                 String convertresult = String.valueOf(result);
                 String convertavg = String.valueOf(avgres);
 
@@ -62,6 +63,7 @@ public class markscalculation extends AppCompatActivity {
 
             }
         });
+
 //        b2.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -74,6 +76,14 @@ public class markscalculation extends AppCompatActivity {
 //                //clearControls();
 //            }
 //        });
+    }
+    public static float calcResult(float castedoutofmark,float castedmark)
+    {
+        return ((castedmark / castedoutofmark) * 100);
+    }
+    public static float calcAvgmark(float castedmark,float numofmodule)
+    {
+        return (castedmark / numofmodule);
     }
 
     private void clearControls()

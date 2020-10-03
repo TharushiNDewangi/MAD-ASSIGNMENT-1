@@ -33,7 +33,7 @@ public class showresult extends AppCompatActivity {
         t1.setText("mark percentage : "+res);
         t2.setText("Average mark : "+avg);
 
-        int castedavg=Integer.parseInt(avg);
+        float castedavg=Float.parseFloat(avg);
 
         if(castedavg >= 95)
         {
