@@ -46,7 +46,6 @@ import java.util.ArrayList;
 
         @Override
         public void onBindViewHolder(@NonNull AdvertisementAdapter.ViewHolder holder, final int position) {
-
             final String title = mDataSet.get(position).getTitle();
             final String name = mDataSet.get(position).getName();
             final String mobile = mDataSet.get(position).getMobile();
@@ -58,7 +57,6 @@ import java.util.ArrayList;
                     .load(imageUrl)
                     .transition(DrawableTransitionOptions.withCrossFade())
                     .into(holder.img_advertisement);
-
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/adv_image"
+    android:background="@drawable/bgimage"
     tools:context=".AdvertisementActivity">
 
     <Button
@@ -16,6 +16,8 @@
         android:background="@drawable/shape"
         android:backgroundTint="#5E35B1"
         android:text="@string/advertisement"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,6 +29,8 @@
         android:background="@drawable/shape"
         android:backgroundTint="#5E35B1"
         android:text="@string/view_advertisement"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

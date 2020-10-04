@@ -39,5 +39,7 @@
     <string name="youradvertisement">Your Advertisement</string>
     <string name="name_of_user">Enter name</string>
     <string name="viewname">View Name</string>
+    <string name="EnterAnswer">answer1</string>
+    <string name="EnterAnswer2">answer2</string>
 
 </resources>

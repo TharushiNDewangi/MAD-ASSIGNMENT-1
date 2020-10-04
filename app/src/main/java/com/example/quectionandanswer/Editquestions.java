@@ -25,30 +25,42 @@ public class Editquestions extends AppCompatActivity {
     Button btnEdit;
     String name, question;
     EditText txt_question, txt_answer1, txt_answer2;
+    Button btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editquestions);
         btnEdit = findViewById(R.id.button5);
+        btnBack=findViewById(R.id.button3);
         txt_question = findViewById(R.id.txt_question);
         txt_answer1 = findViewById(R.id.txt_answer1);
         txt_answer2 = findViewById(R.id.txt_answer2);
         name = getIntent().getStringExtra("name");
         question = getIntent().getStringExtra("question");
 
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Editquestions.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Q&A").child(name).child("answers");
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
+
                 Answer answer = dataSnapshot.getValue(Answer.class);
                 txt_question.setText(question);
                 txt_answer1.setText(answer.getAnswer1());
                 txt_answer2.setText(answer.getAnswer2());
             }
+            // This method is called once with the initial value and again
+            // whenever data at this location is updated.
 
             @Override
             public void onCancelled(DatabaseError error) {

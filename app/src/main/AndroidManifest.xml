@@ -21,7 +21,6 @@
         <activity android:name=".AdvertisementActivity" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".ViewQandASession" />
-        <activity android:name=".Deletequestions" />
         <activity android:name=".Editquestions" />
         <activity android:name=".Addquestions" />
         <activity android:name=".MainActivity">

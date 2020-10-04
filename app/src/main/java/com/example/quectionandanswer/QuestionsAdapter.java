@@ -43,10 +43,8 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         final String name = mDataSet.get(position).getName();
         final String question = mDataSet.get(position).getQuestion();
-
         holder.txt_name.setText(name);
         holder.txt_question.setText(question);
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -26,7 +26,7 @@ public class ViewQandASession extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_qand_a_session);
         btnUpdate=findViewById(R.id.btnUpdate);
-        btnDelete=findViewById(R.id.btnDelete);
+
 
         name = getIntent().getStringExtra("name");
         question = getIntent().getStringExtra("question");
@@ -41,13 +41,7 @@ public class ViewQandASession extends AppCompatActivity {
 
             }
         });
-        btnDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent delQue =new Intent(ViewQandASession.this,Deletequestions.class);
-                startActivity(delQue);
-            }
-        });
+
 
 
         TextView txt_name = findViewById(R.id.txt_mobile);

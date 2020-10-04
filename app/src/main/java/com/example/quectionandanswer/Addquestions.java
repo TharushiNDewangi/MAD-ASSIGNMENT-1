@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,12 +40,11 @@ public class Addquestions extends AppCompatActivity {
                 String name=etName.getText().toString();
                 String  question =etQuestion.getText().toString();
 
-                QuestionsInfo questionClass = new QuestionsInfo(name,question);
-                reference.child(name).setValue(questionClass);
 
+                    QuestionsInfo questionClass = new QuestionsInfo(name, question);
+                    reference.child(name).setValue(questionClass);
+                Toast.makeText(Addquestions.this, "Added successfully", Toast.LENGTH_SHORT).show();
 
-
-              //  rootNode = FirebaseDatabase.getInstance().getReference("Q&A").child(hgfhf).child("answers").setValue();
             }
         });
 

@@ -24,15 +24,9 @@ context = this;
             add = findViewById(R.id.button2);
 
             view = findViewById(R.id.button9);
-            back = findViewById(R.id.button15);
 
-            back.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent backTo = new Intent(context, MainActivity.class);
-                    startActivity(backTo);
-                }
-            });
+
+
 
             add.setOnClickListener(new View.OnClickListener() {
                 @Override

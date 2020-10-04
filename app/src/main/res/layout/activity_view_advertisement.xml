@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/adv_image"
+    android:background="@drawable/bgimage"
     tools:context=".ViewAdvertisement">
 
     <TextView
@@ -29,7 +29,7 @@
         android:layout_height="53dp"
 
         android:background="@drawable/shape"
-        android:backgroundTint="#FFFFFF"
+        android:backgroundTint="@color/colorAccent"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,7 @@
         android:layout_width="225dp"
         android:layout_height="53dp"
         android:background="@drawable/shape"
-        android:backgroundTint="#FFFFFF"
+        android:backgroundTint="@color/colorAccent"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +57,7 @@
         android:layout_width="225dp"
         android:layout_height="53dp"
         android:background="@drawable/shape"
-        android:backgroundTint="#FFFFFF"
+        android:backgroundTint="@color/colorAccent"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +72,7 @@
         android:layout_height="53dp"
         android:layout_marginTop="396dp"
         android:background="@drawable/shape"
-        android:backgroundTint="#FFFFFF"
+        android:backgroundTint="@color/colorAccent"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.537"
@@ -85,7 +85,7 @@
         android:layout_height="105dp"
         android:layout_marginBottom="64dp"
         android:background="@drawable/shape"
-        android:backgroundTint="#FFFFFF"
+        android:backgroundTint="@color/colorAccent"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"

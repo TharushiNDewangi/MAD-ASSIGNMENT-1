@@ -40,8 +40,6 @@ public class ViewAdvertisement extends AppCompatActivity {
         txt_mobile.setText(mobile);
         txt_email.setText(email);
         txt_description.setText(description);
-
-
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         databaseReference = db.getReference("Advertisement").child(mobile);
 

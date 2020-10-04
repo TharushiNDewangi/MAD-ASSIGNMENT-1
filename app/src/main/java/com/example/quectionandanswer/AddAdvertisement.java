@@ -49,12 +49,11 @@ public class AddAdvertisement extends AppCompatActivity {
     Context context;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_advertisement);
-        context= this;
+        context = this;
         btnChoose = (Button) findViewById(R.id.btnChoose);
 
         imageView = (ImageView) findViewById(R.id.imageView2);
@@ -64,7 +63,7 @@ public class AddAdvertisement extends AppCompatActivity {
         txt_mobile = findViewById(R.id.txt_mobile);
         txt_email = findViewById(R.id.txt_email);
         txt_description = findViewById(R.id.txt_description);
-        btnAdd =findViewById(R.id.btnAdd);
+        btnAdd = findViewById(R.id.btnAdd);
 
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
@@ -78,27 +77,45 @@ public class AddAdvertisement extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (filePath != null) {
+
+                if (TextUtils.isEmpty(txt_title.getText().toString())) {
+                    Toast.makeText(context, "Please enter title", Toast.LENGTH_SHORT).show();
+                    txt_title.requestFocus();
+                } else if (TextUtils.isEmpty(txt_name.getText().toString())) {
+                    Toast.makeText(context, "Please enter name", Toast.LENGTH_SHORT).show();
+                    txt_name.requestFocus();
+                } else if (TextUtils.isEmpty(txt_mobile.getText().toString())) {
+                    Toast.makeText(context, "please enter mobile", Toast.LENGTH_SHORT).show();
+                    txt_mobile.requestFocus();
+                } else if (txt_mobile.getText().toString().length()<10) {
+                    Toast.makeText(context, "Invalid Mobile Number", Toast.LENGTH_SHORT).show();
+                    txt_mobile.requestFocus();
+                } else if (TextUtils.isEmpty(txt_email.getText().toString())) {
+                    Toast.makeText(context, "please enter email", Toast.LENGTH_SHORT).show();
+                    txt_email.requestFocus();
+                } else if (TextUtils.isEmpty(txt_description.getText().toString())) {
+                    Toast.makeText(context, "please enter description", Toast.LENGTH_SHORT).show();
+                    txt_description.requestFocus();
+                } else if (filePath == null) {
+                    Toast.makeText(context, "Please select an Image", Toast.LENGTH_SHORT).show();
+                    btnAdd.requestFocus();
+                } else {
+
                     final ProgressDialog progressDialog = new ProgressDialog(context);
                     progressDialog.setTitle("Uploading...");
                     progressDialog.show();
-
                     final StorageReference ref = storageReference.child("images/" + UUID.randomUUID().toString());
-
                     final UploadTask uploadTask = ref.putFile(filePath);
                     uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-
                             uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                                 @Override
                                 public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
                                     if (!task.isSuccessful()) {
                                         throw task.getException();
                                     }
-                                    // Continue with the task to get the download URL
                                     return ref.getDownloadUrl();
-
                                 }
                             }).addOnCompleteListener(new OnCompleteListener<Uri>() {
                                 @Override
@@ -107,8 +124,7 @@ public class AddAdvertisement extends AppCompatActivity {
                                         //thumb_download_url = task.getResult().toString();
                                         addAdvertisement(Objects.requireNonNull(task.getResult()).toString());
                                         progressDialog.dismiss();
-                                        Toast.makeText(AddAdvertisement.this, "Uploaded", Toast.LENGTH_SHORT).show();
-
+                                        Toast.makeText(AddAdvertisement.this, "Added successfully", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });
@@ -129,11 +145,8 @@ public class AddAdvertisement extends AppCompatActivity {
                         }
                     });
                 }
-
             }
         });
-
-
 
 
     }
@@ -148,45 +161,28 @@ public class AddAdvertisement extends AppCompatActivity {
 
     private void addAdvertisement(String imgUrl) {
 
-                Advertisement advertisement = new Advertisement();
-                advertisement.setTitle(txt_title.getText().toString());
-                advertisement.setName(txt_name.getText().toString());
-                advertisement.setMobile(txt_mobile.getText().toString());
-                advertisement.setEmail(txt_email.getText().toString());
-                advertisement.setDescription(txt_description.getText().toString());
-                advertisement.setImageUrl(imgUrl);
-                FirebaseDatabase db = FirebaseDatabase.getInstance();
-                DatabaseReference databaseReference = db.getReference("Advertisement");
+        Advertisement advertisement = new Advertisement();
+        advertisement.setTitle(txt_title.getText().toString());
+        advertisement.setName(txt_name.getText().toString());
+        advertisement.setMobile(txt_mobile.getText().toString());
+        advertisement.setEmail(txt_email.getText().toString());
+        advertisement.setDescription(txt_description.getText().toString());
+        advertisement.setImageUrl(imgUrl);
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = db.getReference("Advertisement");
 
-                String mobile = txt_mobile.getText().toString();
-        try {
-            if (TextUtils.isEmpty(txt_title.getText().toString()))
-                Toast.makeText(getApplicationContext(), "Please enter title", Toast.LENGTH_SHORT).show();
-            else if (TextUtils.isEmpty(txt_name.getText().toString()))
-                Toast.makeText(getApplicationContext(), "Please enter name", Toast.LENGTH_SHORT).show();
-            else if (TextUtils.isEmpty(txt_mobile.getText().toString()))
-                Toast.makeText(getApplicationContext(), "please enter mobile", Toast.LENGTH_SHORT).show();
-            else if (TextUtils.isEmpty(txt_email.getText().toString()))
-                Toast.makeText(getApplicationContext(), "please enter email", Toast.LENGTH_SHORT).show();
-            else if (TextUtils.isEmpty(txt_description.getText().toString()))
-                Toast.makeText(getApplicationContext(), "please enter description", Toast.LENGTH_SHORT).show();
-            else {
-                databaseReference.child(mobile).setValue(advertisement).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Toast.makeText(AddAdvertisement.this, "Added Successfully", Toast.LENGTH_SHORT).show();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        e.printStackTrace();
-                    }
-                });
+        String mobile = txt_mobile.getText().toString();
+        databaseReference.child(mobile).setValue(advertisement).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(AddAdvertisement.this, "Added Successfully", Toast.LENGTH_SHORT).show();
             }
-        }catch(NumberFormatException e){
-            e.printStackTrace();
-
-        }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

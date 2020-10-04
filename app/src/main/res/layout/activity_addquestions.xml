@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/qanda"
+    android:background="@drawable/bgimage"
     tools:context=".Addquestions">
 
     <TextView
@@ -25,16 +25,18 @@
 
     <EditText
         android:id="@+id/txt_question"
-        android:layout_width="277dp"
-        android:layout_height="63dp"
+        android:layout_width="209dp"
+        android:layout_height="43dp"
         android:background="@drawable/shape"
-        android:backgroundTint="#D1CDDA"
+
         android:ems="10"
         android:hint="@string/Your_Quection"
         android:inputType="textPersonName"
+        android:textColorHint="#090909"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.559"
+        app:layout_constraintHorizontal_bias="0.544"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.321" />
@@ -44,9 +46,10 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:background="@drawable/shape"
-        android:backgroundTint="#5E35B1"
+        android:backgroundTint="#1E0357"
         android:onClick="click"
         android:text="@string/ADD"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.565"
@@ -56,16 +59,18 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName10"
-        android:layout_width="218dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="96dp"
-        android:background="@drawable/shape"
-        android:backgroundTint="#E5E2EA"
+        android:layout_width="205dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="128dp"
+
+        android:backgroundTint="@android:color/holo_purple"
         android:ems="10"
         android:hint="@string/name_of_user"
         android:inputType="textPersonName"
+        android:textColorHint="#090909"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

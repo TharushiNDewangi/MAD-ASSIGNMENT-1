@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/qanda"
+    android:background="@drawable/bgimage"
     tools:context=".ViewQandASession">
 
     <TextView
@@ -30,7 +30,7 @@
         android:layout_height="70dp"
         android:layout_marginStart="56dp"
         android:background="@drawable/shape"
-        android:backgroundTint="@color/common_google_signin_btn_text_dark_default"
+
         android:text="@string/Quection"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="18sp"
@@ -45,15 +45,19 @@
         android:layout_width="206dp"
         android:layout_height="47dp"
 
-        android:layout_marginStart="176dp"
-        android:background="@color/common_google_signin_btn_text_dark_pressed"
-        android:backgroundTint="#FFFFFF"
+        android:layout_marginStart="148dp"
+        android:background="@drawable/shape"
+
         android:ems="10"
+        android:hint="@string/EnterAnswer"
         android:inputType="textPersonName"
+        android:textColor="#100F0F"
+        android:textColorHint="#090808"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.394" />
+        app:layout_constraintVertical_bias="0.391" />
 
     <Button
         android:id="@+id/btn_add"
@@ -68,21 +72,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/txt_answer1"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/txt_answer2" />
 
     <EditText
         android:id="@+id/txt_answer2"
         android:layout_width="204dp"
         android:layout_height="47dp"
-        android:layout_marginTop="328dp"
-        android:background="@color/common_google_signin_btn_text_dark_default"
-        android:backgroundTint="#FFFFFF"
+        android:layout_marginTop="340dp"
+        android:background="@drawable/shape"
+
         android:ems="10"
 
+        android:hint="@string/EnterAnswer2"
         android:inputType="textPersonName"
+        android:textColorHint="#090909"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintHorizontal_bias="0.714"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -92,7 +99,7 @@
         android:layout_height="37dp"
         android:layout_marginBottom="112dp"
         android:background="@drawable/shape"
-        android:backgroundTint="@color/common_google_signin_btn_text_dark_default"
+
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -105,26 +112,14 @@
         android:id="@+id/btnUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="108dp"
+        android:layout_marginBottom="96dp"
         android:background="@drawable/shape"
         android:backgroundTint="#4E1DB1"
         android:text="UPDATE"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.585"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btnDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/shape"
-        android:backgroundTint="#491DA1"
-        android:text="DELETE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/txt_answer2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
