@@ -72,12 +72,10 @@ public class AddCourse extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Empty name", Toast.LENGTH_LONG).show();
             else if (TextUtils.isEmpty(s.getSelectedItem().toString()))
                 Toast.makeText(getApplicationContext(), "Empty course", Toast.LENGTH_LONG).show();
-
             else {
                 if (i1 != null) {
                     final ProgressDialog progressDialog = new ProgressDialog(this);
                     progressDialog.setTitle("Uploading...");
-
                     progressDialog.show();
                     StorageReference storageReferance = FirebaseStorage.getInstance().getReference().child("images");
                     final StorageReference fileRefrence = storageReferance.child(imageUrl.getLastPathSegment());
@@ -92,7 +90,6 @@ public class AddCourse extends AppCompatActivity {
                                     String title = e1.getText().toString();
                                     String des = e2.getText().toString();
                                     String course = s.getSelectedItem().toString();
-
                                     course helper = new course(title,des,course,img);
                                     ref.child(title).setValue(helper);
                                     progressDialog.dismiss();
@@ -102,21 +99,15 @@ public class AddCourse extends AppCompatActivity {
                         }
                     });
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(), "no file selected", Toast.LENGTH_SHORT).show();
-                }
-
+                else {
+                    Toast.makeText(getApplicationContext(), "no file selected", Toast.LENGTH_SHORT).show(); }
             }
         }
         catch (Exception e)
         {
             Toast.makeText(getApplicationContext(),"invalide",Toast.LENGTH_LONG).show();
         }
-
-
     }
-
     private void alert(String message)
     {
         AlertDialog dlg = new AlertDialog.Builder(AddCourse.this).setTitle("Message").setMessage(message)
@@ -131,9 +122,7 @@ public class AddCourse extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("image/*");
         startActivityForResult(intent,GALARY);
-        //onActivityResult();
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -143,7 +132,6 @@ public class AddCourse extends AppCompatActivity {
             i1.setImageURI(imageUrl);
             //picasso.with(this).load(imageUrl).into(i1);
         }
-
     }
     //String img = i1.getDownloaed.toString();
 //        AddCourseHelper helper = new  AddCourseHelper(title,des,course);

@@ -29,7 +29,6 @@ public class ExampleUnitTest {
         float result = markc.calcResult(500,450);
         assertEquals(90,result,0.001);
     }
-
     @Test
     public void calcAvgmark()
     {

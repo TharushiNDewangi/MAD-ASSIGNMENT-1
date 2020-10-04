@@ -76,4 +76,7 @@
     <string name="modules">Enter Your name</string>
     <string name="outofmark">Enter your Outof Mark</string>
     <string name="moduless">Enter Number of modules</string>
+    <string name="resultt">"Your Result "</string>
+    <string name="back">Back</string>
+    <string name="motivate">Motivate your Mind</string>
 </resources>

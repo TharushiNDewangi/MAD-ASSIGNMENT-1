@@ -37,7 +37,7 @@ public class viewcourse extends AppCompatActivity {
         setContentView(R.layout.activity_viewcourse);
 
         b1=findViewById(R.id.up1);
-        b2=findViewById(R.id.up2);
+
 
         e1=findViewById(R.id.viewtitle);
         e2=findViewById(R.id.description);
@@ -54,12 +54,7 @@ public class viewcourse extends AppCompatActivity {
                 updatecourse();
             }
         });
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Alert(view);deletecourse();
-            }
-        });
+
         getdbvalues(title);
     }
 
@@ -70,14 +65,12 @@ public class viewcourse extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                   String title = snapshot.child("title").getValue().toString();
-                   String des  = snapshot.child("des").getValue().toString();
-                  String img  = snapshot.child("mimagurl").getValue().toString();
-                  Picasso.get().load(img).into(i1);
+                String title = snapshot.child("title").getValue().toString();
+                String des  = snapshot.child("des").getValue().toString();
+                String img  = snapshot.child("mimagurl").getValue().toString();
+                Picasso.get().load(img).into(i1);
                    e1.setText(title);
                    e2.setText(des);
-
             }
 
             @Override

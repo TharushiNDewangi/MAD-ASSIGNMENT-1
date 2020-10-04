@@ -90,13 +90,12 @@ public class UpdateCourses extends AppCompatActivity {
 
     public void returnback() {
 
-        Intent intent = new Intent(this, viewcourse.class);
-        startActivity(intent);
+        startActivity(new Intent(this,home.class));
 
     }
     public void Alert(View view){
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        setTitle("Do you wat to update?");
+        setTitle("Do you want to update?");
         alert.setMessage(" You wanted to update ?");
         alert.setPositiveButton("YES",
                 new DialogInterface.OnClickListener() {
@@ -156,9 +155,7 @@ public class UpdateCourses extends AppCompatActivity {
         DatabaseReference reference = database.getReference().child("course").child(titl);
         Map<String, Object> name = new HashMap();
         name.put("des", d);
-
         reference.updateChildren(name);
-
         Toast.makeText(UpdateCourses.this,d,Toast.LENGTH_LONG).show();
 
     }

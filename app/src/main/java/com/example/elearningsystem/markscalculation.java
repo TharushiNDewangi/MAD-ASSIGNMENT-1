@@ -63,19 +63,6 @@ public class markscalculation extends AppCompatActivity {
 
             }
         });
-
-//        b2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                clearControls();
-//            }
-//        });
-//        b2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //clearControls();
-//            }
-//        });
     }
     public static float calcResult(float castedoutofmark,float castedmark)
     {

@@ -115,23 +115,11 @@ public class Java extends Fragment {
                 holder.b1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //Toast.makeText(getActivity(),"@@1123",Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(getContext(),viewcourse.class);
                         intent.putExtra("title",model.getTitle());
                         getContext().startActivity(intent);
                     }
                 });
-//                    holder.c1.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//                            Toast.makeText(getActivity(),"@@",Toast.LENGTH_LONG).show();
-//                            Intent intent = new Intent(getContext(),viewcourse.class);
-//                            intent.putExtra("title",model.getTitle());
-//                            getContext().startActivity(intent);
-//                        }
-//                    });
-
-
 
             }
 

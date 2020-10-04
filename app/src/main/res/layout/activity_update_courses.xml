@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DDBBE3"
+    android:background="#A981AF"
     tools:context=".UpdateCourses">
 
     <TextView
@@ -14,7 +14,9 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/description"
@@ -24,7 +26,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="84dp"
         android:gravity="start|top"
-        android:inputType="textMultiLine" />
+        android:inputType="textMultiLine"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/up3"
@@ -54,7 +57,7 @@
         android:layout_marginEnd="51dp"
         android:layout_marginRight="51dp"
         android:layout_marginBottom="22dp"
-        android:text="@string/delete"
+        android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.417"
@@ -68,6 +71,7 @@
         android:layout_height="136dp"
         android:layout_below="@id/coursedescription"
         android:layout_alignParentRight="true"
+        android:layout_marginLeft="83dp"
         android:layout_marginTop="100dp"
         android:layout_marginRight="83dp"
         android:background="@drawable/shape"

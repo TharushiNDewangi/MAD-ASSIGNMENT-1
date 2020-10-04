@@ -4,29 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#AA58B8"
     tools:context=".showresult">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#C152D5"
+        android:background="@drawable/bgimage"
         tools:context=".markscalculation"
         tools:layout_editor_absoluteX="55dp"
         tools:layout_editor_absoluteY="97dp">
 
         <TextView
             android:id="@+id/name"
-            android:layout_width="329dp"
-            android:layout_height="91dp"
+            android:layout_width="328dp"
+            android:layout_height="78dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="53dp"
-            android:layout_marginLeft="53dp"
-            android:layout_marginTop="374dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="359dp"
+            android:background="@color/colorPrimaryDark"
             android:text="TextView"
-            android:textColor="#171616"
+            android:textColor="#F3F2E8"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -37,27 +37,44 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="73dp"
-            android:layout_marginLeft="73dp"
-            android:layout_marginTop="137dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="168dp"
+            android:background="@color/colorPrimaryDark"
             android:text="TextView"
-            android:textColor="#171616"
+            android:textColor="#F3F2E8"
             android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/avg"
-            android:layout_width="289dp"
-            android:layout_height="92dp"
+            android:layout_width="273dp"
+            android:layout_height="68dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="69dp"
-            android:layout_marginLeft="69dp"
-            android:layout_marginTop="247dp"
+            android:layout_marginStart="76dp"
+            android:layout_marginLeft="76dp"
+            android:layout_marginTop="260dp"
+            android:background="@color/colorPrimaryDark"
             android:text="TextView"
-            android:textColor="#171616"
+            android:textColor="#F3F2E8"
             android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="133dp"
+            android:layout_marginLeft="133dp"
+            android:layout_marginTop="52dp"
+            android:text="@string/resultt"
+            android:textColor="#121111"
+            android:textSize="30sp"
             android:textStyle="bold" />
     </RelativeLayout>
 
